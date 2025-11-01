@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Jannet";
+    src: url(../fonts/JannaLTRegular.ttf);
+}
+:root{
+    font-size: 16px;
+    font-family: "Jannet";
+    direction: rtl;
+}
+a,button,div,span,p{
+    font-family: "Jannet";
+}
+.navbar{
+    margin-bottom: 10rem;
+    padding-inline: 1rem;
+}
+.navbar .navbar-img{
+    height: 3rem;
+    object-fit: cover;
+}
+.login-section{
+    padding-top: 4.8rem;
+    background-color: #f3f4f6;
+    /* height: 100vh; */
+    align-items: center;
+}
+.login-form{
+    padding-inline: 2rem;
+    background-color: #f3f4f6;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100%;
+}
+.card-login{
+    background-color: white;
+}
+label{
+    font-size: .9rem;
+    padding-bottom: .2rem;
+    color: gray;
+}
