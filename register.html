@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>تسجيل الدخول</title>
+    <title>إنشاء حساب جديد</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -56,89 +56,85 @@
     <div class="login-section d-lg-flex">
         <div class="login-form w-100">
             <h4 class="card-title pt-4 pb-4">مرحبا بك في منصة الأستاذ محمد</h4>
+            <p>ادخل بياناتك بشكل صحيح للحصول علي افضل تجربة داخل الموقع</p>
             <div class="card text-start mb-4">
                 <div class="card-body">
-
-                    <h5 class="text-center bg-info py-2 mb-2 rounded-2">تسجيل الدخول</h5>
-
+                    <h5 class="text-center bg-info py-2 mb-2 rounded-2"> انشئ حسابك الآن : </h5>
                     <form>
-                        <div class="form-group pt-3">
-                            <label for="emailLogin">رقم التليفون </label>
-                            <input type="tel" id="emailLogin" required class="form-control py-2 text-start"
-                                placeholder="">
-                        </div>
-                        <div class="form-group mt-3 pb-4">
-                            <label for="passLogin">كلمة المرور</label>
-                            <input type="password" id="passLogin" required class="form-control py-2"
-                                placeholder="">
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="custom-control custom-checkbox text-left d-inline float-left">
-                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                <label class="custom-control-label" for="customCheck">تذكرني</label>
+                        <div id="firstStep">
+                            <div class="d-md-flex gap-2">
+                                <div class="form-group pt-3 w-100">
+                                    <label for="fistName">الإسم الأول</label>
+                                    <input type="text" id="fistName" required class="form-control py-2 text-start"
+                                        placeholder="">
+                                </div>
+                                <div class="form-group pt-3 w-100">
+                                    <label for="lastName">الإسم الأخير</label>
+                                    <input type="text" id="lastName" required class="form-control py-2 text-start"
+                                        placeholder="">
+                                </div>
                             </div>
-                            <span><button type="button" data-bs-toggle="modal" class="bg-white border-0"
-                                    data-bs-target="#forgetPass">نسيت كلمة المرور</button></span>
+                            <div class="form-group mt-3">
+                                <label for="phoneNum">رقم الهاتف (الطالب)</label>
+                                <input type="tel" id="phoneNum" required class="form-control text-start py-2"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mt-3 pb-4">
+                                <label for="phoneNumFather">رقم هاتف الأب </label>
+                                <input type="tel" id="phoneNumFather" required class="form-control text-start py-2"
+                                    placeholder="">
+                            </div>
+                            <button type="button" onclick="showStep(2)" class="btn btn-primary w-100 py-2 font-weight-bold btn-block mt-3">التالي</button>
                         </div>
-                        <button type="submit"
-                            class="btn btn-primary w-100 py-2 font-weight-bold btn-block mt-3">دخول</button>
-                        <p class="text-center pt-3">ليس لديك حساب؟ <a href="register.html" class="linkColor">سجل
-                                الان</a></p>
+
+                         <div id="secondStep" style="display: none;">
+                            <label for="address">الصف</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>اختر الصف</option>
+                                <option value="1">الأول الثانوي</option>
+                                <option value="2">الثاني الثانوي</option>
+                                <option value="3">الثالث الثانوي</option>
+                            </select>
+                            <div class="pt-3">
+                                <label for="address">المحافظة</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>اختر المحافظة</option>
+                                    <option value="1"> المنيا </option>
+                                    <option value="2">القاهرة </option>
+                                    <option value="3"> الجيزة</option>
+                                </select>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" required class="form-control text-start py-2"
+                                    placeholder="">
+                            </div>
+                            <div class="d-md-flex gap-2">
+                                <div class="form-group pt-3 w-100">
+                                    <label for="fistPass">كلمة المرور  </label>
+                                    <input type="password" id="fistPass" required class="form-control py-2 text-start"
+                                        placeholder="">
+                                </div>
+                                <div class="form-group pt-3 w-100">
+                                    <label for="confirmPass">تأكيد كلمة المرور  </label>
+                                    <input type="password" id="confirmPass" required class="form-control py-2 text-start"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="button" onclick="showStep(1)" class="btn btn-secondary w-100 py-2 font-weight-bold btn-block mt-3">السابق</button>
+                                <button type="button" onclick="showAdditionalFields()"
+                                    class="btn btn-primary w-100 py-2 font-weight-bold btn-block mt-3">التالي</button>
+                            </div>
+                        </div>
+                        <p class="text-center pt-3"> لديك حساب بالفعل ؟ <a href="login.html" class="linkColor">سجل
+                                الدخول</a></p>
                     </form>
-                    <div class="modal fade" id="forgetPass" tabindex="-1" role="dialog" aria-labelledby="forgetPass" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header border-bottom-0">
-                                <h5 class="modal-title mr-auto d-block text-left" id="forgetPass">
-                                    <button type="button" class="btn fs-3 p-0" data-bs-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">
-                                            <i class="fa fa-times-circle"></i>
-                                        </span>
-                                    </button>
-                                </h5>
-                                
-                                </div>
-                                <div class="modal-body text-center">
-                                    <h4 class="linkColor font-weight-bold">هل نسيت كلمة المرور </h4>
-                                    <p class="text-muted">فضلا قم بادخال رقم الهاتف الخاص بحسابك</p>
-                                    <form action="#" class="pt-3">
-                                        <input type="tel" id="phoneInput" required class="form-control text-start" placeholder="رقم الهاتف">
-                                        <div id="phoneError" class="text-danger mt-2 text-start" style="display: none;">من فضلك قم بإدخال رقم الهاتف المسجل علي المنصة</div>
-                                        <button type="submit" class="btn btn-primary font-weight-bold w-100 mt-4" id="submitPhone">ارسال</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="codeModal" tabindex="-1" aria-labelledby="codeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header border-bottom-0">
-                                <h5 class="modal-title mr-auto d-block text-left" id="codeModalLabel">
-                                    <button type="button" class="btn fs-3 p-0" data-bs-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">
-                                            <i class="fa fa-times-circle"></i>
-                                        </span>
-                                    </button>
-                                </h5>
-                                
-                                </div>
-                                <div class="modal-body text-center">
-                                    <h4 class="linkColor font-weight-bold">تم ارسال الكود</h4>
-                                    <p class="text-muted px-4">فضلا قم بادخال رقم الكود الذي تم ارساله الي رقم التليفون الخاص بكم</p>
-                                    <div class="pt-3">
-                                        <input type="text" required class="form-control text-start" placeholder="الكود">
-                                        <button type="submit" data-bs-dismiss="modal" class="btn btn-primary font-weight-bold w-100 mt-4">ارسال</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
         <div class="card-login text-center w-100 d-none d-lg-block">
-            <img src="images/Login.gif" class="img-fluid" alt="">
+            <img src="images/register.png" class="img-fluid" alt="">
         </div>
     </div>
     <div class="footer p-4">
