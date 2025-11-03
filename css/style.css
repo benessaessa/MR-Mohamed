@@ -46,6 +46,9 @@
 .bg-main{
     background-color: var(--bg-color-main) !important;
 }
+.text-primary{
+    color: var(--color-primary) !important;
+}
 a,button,div,span,p{
     font-family: "Jannet";
 }
@@ -91,7 +94,7 @@ label{
 .footer{
     background-color: var(--bg-color-main);
     padding-block: 2rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
     color: var(--color-white);
 }
 .socials a , .footer a{

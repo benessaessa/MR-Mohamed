@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', function () {
+  var modalEl = document.getElementById('instructionsModal');
+
+  // Create Modal instance with options (optional because you already set via data- attributes)
+  var myModal = new bootstrap.Modal(modalEl, {
+    backdrop: 'static', // prevent closing by clicking backdrop
+    keyboard: false     // prevent closing with ESC
+  });
+
+  // Show the modal
+  myModal.show();
+});
 document.getElementById("submitPhone").addEventListener("click", function () {
   const phoneInput = document.getElementById("phoneInput");
   const errorMsg = document.getElementById("phoneError");
