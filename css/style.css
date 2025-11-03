@@ -61,6 +61,9 @@ a,button,div,span,p{
     color: var(--color-white) !important;
     font-size: 1.1rem;
 }
+.navbar .nav-item .nav-link:hover{
+    color: var(--color-primary) !important;
+}
 .navbar .navbar-img{
     height: 3rem;
     object-fit: cover;
