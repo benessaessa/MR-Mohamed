@@ -47,7 +47,7 @@
                         <a class="btn btn-primary" href="login.html">تسجيل الدخول</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-primary" href="register.html"> إنشاء حساب</a>
+                        <a class="btn btn-secondary" href="register.html"> إنشاء حساب</a>
                     </li>
                 </ul>
             </div>
@@ -59,35 +59,35 @@
             <p>ادخل بياناتك بشكل صحيح للحصول علي افضل تجربة داخل الموقع</p>
             <div class="card text-start mb-4">
                 <div class="card-body">
-                    <h5 class="text-center bg-info py-2 mb-2 rounded-2"> انشئ حسابك الآن : </h5>
-                    <form>
+                    <h5 class="text-center py-2 mb-2"> انشئ حسابك الآن : </h5>
+                    <form id="myForm" onsubmit="return false;">
                         <div id="firstStep">
                             <div class="d-md-flex gap-2">
                                 <div class="form-group pt-3 w-100">
-                                    <label for="fistName">الإسم الأول</label>
-                                    <input type="text" id="fistName" required class="form-control py-2 text-start"
-                                        placeholder="">
+                                    <label for="fistName">الإسم الأول*</label>
+                                    <input type="text" id="fistName" required class="form-control py-2 text-start" placeholder="">
+                                    <span id="fistNameError" class="text-danger" style="display: none;"></span>
                                 </div>
                                 <div class="form-group pt-3 w-100">
-                                    <label for="lastName">الإسم الأخير</label>
-                                    <input type="text" id="lastName" required class="form-control py-2 text-start"
-                                        placeholder="">
+                                    <label for="lastName">الإسم الأخير*</label>
+                                    <input type="text" id="lastName" required class="form-control py-2 text-start" placeholder="">
+                                    <span id="lastNameError" class="text-danger" style="display: none;"></span>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <label for="phoneNum">رقم الهاتف (الطالب)</label>
-                                <input type="tel" id="phoneNum" required class="form-control text-start py-2"
-                                    placeholder="">
+                                <label for="phoneNum">رقم الهاتف (الطالب)*</label>
+                                <input type="tel" id="phoneNum" required class="form-control text-start py-2" placeholder="" pattern="^01[0-9]{9}$" title="رقم الهاتف يجب أن يبدأ بـ 01 وأن يكون 11 رقمًا">
+                                <span id="phoneNumError" class="text-danger" style="display: none;"></span>
                             </div>
                             <div class="form-group mt-3 pb-4">
-                                <label for="phoneNumFather">رقم هاتف الأب </label>
-                                <input type="tel" id="phoneNumFather" required class="form-control text-start py-2"
-                                    placeholder="">
+                                <label for="phoneNumFather">رقم هاتف الأب*</label>
+                                <input type="tel" id="phoneNumFather" required class="form-control text-start py-2" placeholder="" pattern="^01[0-9]{9}$" title="رقم الهاتف يجب أن يبدأ بـ 01 وأن يكون 11 رقمًا">
+                                <span id="phoneNumFatherError" class="text-danger" style="display: none;"></span>
                             </div>
-                            <button type="button" onclick="showStep(2)" class="btn btn-primary w-100 py-2 font-weight-bold btn-block mt-3">التالي</button>
+                            <button type="button" onclick="validateStep1()" class="btn btn-primary w-100 py-2 font-weight-bold btn-block mt-3">التالي</button>
                         </div>
 
-                         <div id="secondStep" class="pt-3" style="display: none;">
+                        <div id="secondStep" class="pt-3" style="display: none;">
                             <label for="address">الصف</label>
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>اختر الصف</option>
@@ -95,6 +95,7 @@
                                 <option value="2">الثاني الثانوي</option>
                                 <option value="3">الثالث الثانوي</option>
                             </select>
+                            <span id="classError" class="text-danger" style="display: none;"></span>
                             <div class="pt-3">
                                 <label for="address">المحافظة</label>
                                 <select class="form-select" aria-label="Default select example">
@@ -103,27 +104,31 @@
                                     <option value="2">القاهرة </option>
                                     <option value="3"> الجيزة</option>
                                 </select>
+                                <span id="regionError" class="text-danger" style="display: none;"></span>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="email">البريد الإلكتروني</label>
                                 <input type="email" id="email" required class="form-control text-start py-2"
                                     placeholder="">
+                                <span id="emailError" class="text-danger" style="display: none;"></span>
                             </div>
                             <div class="d-md-flex gap-2">
                                 <div class="form-group pt-3 w-100">
                                     <label for="fistPass">كلمة المرور  </label>
                                     <input type="password" id="fistPass" required class="form-control py-2 text-start"
                                         placeholder="">
+                                    <span id="passError" class="text-danger" style="display: none;"></span>
                                 </div>
                                 <div class="form-group pt-3 w-100">
                                     <label for="confirmPass">تأكيد كلمة المرور  </label>
                                     <input type="password" id="confirmPass" required class="form-control py-2 text-start"
                                         placeholder="">
+                                    <span id="confirmPassError" class="text-danger" style="display: none;"></span>
                                 </div>
                             </div>
                             <div class="d-flex gap-2">
                                 <button type="button" onclick="showStep(1)" class="btn btn-secondary w-100 py-2 font-weight-bold btn-block mt-3">السابق</button>
-                                <button type="button" onclick="showAdditionalFields()"
+                                <button type="button" onclick="validateStep2()"
                                     class="btn btn-primary w-100 py-2 font-weight-bold btn-block mt-3">التالي</button>
                             </div>
                         </div>
@@ -148,7 +153,7 @@
                 </div>
                 <div class="col-lg-2 col-md-5">
                     <p class="smallText mb-2">تواصل معنا من خلال</p>
-                    <p>
+                    <p class="socials">
                         <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
                             <i class="fab fs-4 fa-facebook-square"></i>
                         </a>
@@ -172,8 +177,8 @@
                 <div class="col-lg-5 col-md-6 pt-3">
                     <div class="d-flex justify-content-end">
                         <div>
-                            <a class="text-black text-decoration-none px-2" href="/privacy-policy">الخصوصية</a>
-                            <a class="text-black text-decoration-none px-2" href="/terms">الشروط والأحكام</a></div>
+                            <a class="text-decoration-none px-2" href="/privacy-policy">الخصوصية</a>
+                            <a class="text-decoration-none px-2" href="/terms">الشروط والأحكام</a></div>
                     </div>
                 </div>
             </div>

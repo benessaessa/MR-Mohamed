@@ -6,13 +6,57 @@
     font-size: 16px;
     font-family: "Jannet";
     direction: rtl;
+    --color-primary: #C48A50;
+    --bg-color-primary: #C48A50;
+    --color-primary-hover: #b37c47; /* Slightly darker shade for hover */
+    --color-on-primary: #ffffff;  
+    --color-secondary: #8A9EA0;
+    --color-white: #ffffff;
+    --bg-color-main: #443120;
+}
+/* Primary Button */
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+}
+
+/* Outline Primary */
+.btn-outline-primary {
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-primary) !important;
+    color: var(--color-on-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+.btn-secondary {
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
+}
+.bg-secondary{
+    background-color: var(--color-secondary) !important;
+}
+.bg-primary{
+    background-color: var(--color-primary) !important;
+}
+.bg-main{
+    background-color: var(--bg-color-main) !important;
 }
 a,button,div,span,p{
     font-family: "Jannet";
 }
 .navbar{
+    background-color: var(--bg-color-main) !important;
     margin-bottom: 10rem;
     padding-inline: 1rem;
+}
+.navbar .nav-item .nav-link{
+    color: var(--color-white) !important;
+    font-size: 1.1rem;
 }
 .navbar .navbar-img{
     height: 3rem;
@@ -20,23 +64,36 @@ a,button,div,span,p{
 }
 .login-section{
     padding-top: 4.8rem;
-    background-color: #f3f4f6;
+    background-color: var(--color-white);
     /* height: 100vh; */
     align-items: center;
 }
 .login-form{
     padding-inline: 2rem;
-    background-color: #f3f4f6;
+    background-color: var(--color-white);
     display: flex;
     flex-flow: column;
     justify-content: center;
     height: 100%;
 }
 .card-login{
-    background-color: white;
+    background-color: var(--color-white);
 }
 label{
     font-size: .9rem;
     padding-bottom: .2rem;
-    color: gray;
+    color: var(--color-secondary);
+}
+.linkColor{
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+.footer{
+    background-color: var(--bg-color-main);
+    padding-block: 2rem;
+    margin-top: 5rem;
+    color: var(--color-white);
+}
+.socials a , .footer a{
+    color: var(--color-white);
 }
