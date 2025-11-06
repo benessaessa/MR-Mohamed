@@ -108,7 +108,7 @@ label{
     border-color: var(--color-white) !important;
     background-color: var(--color-white) !important;
 }
-.modal .modal-body{
+.modal .modal-body ,.modal .modal-header,.modal .modal-footer{
     background-color: var(--bg-color-first);
 }
 /* ================== Home page ========================== */
