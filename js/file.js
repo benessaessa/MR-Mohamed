@@ -10,36 +10,34 @@ document.addEventListener('DOMContentLoaded', function () {
   // Show the modal
   myModal.show();
 });
-
 const swiper = new Swiper('.swiper-course', {
+  // Optional parameters
   watchSlidesProgress: true,
   loop: true,
-  spaceBetween: 20,
-
-  slidesPerView: 3, // Default for desktop
-
+  slidesPerView: 3,
+  spaceBetween: 20, // add spacing between slides (adjust value as needed)
   breakpoints: {
-    768: {
-      slidesPerView: 1, // Mobile
-    },
+    // when window width is <= 1024px (Tablet)
     1024: {
-      slidesPerView: 2, // Tablet
+      slidesPerView: 2
     },
-    1200: {
-      slidesPerView: 3, // Desktop
+    // when window width is <= 768px (Mobile)
+    768: {
+      slidesPerView: 1
     }
   },
-
+  // If we need pagination
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
   },
 
+  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
 
+  // And if we need scrollbar
   scrollbar: {
     el: '.swiper-scrollbar',
   },
