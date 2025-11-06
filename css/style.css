@@ -94,10 +94,91 @@ label{
     color: var(--color-secondary);
     text-decoration: none;
 }
+.navbar-toggler{
+    border-color: var(--color-white) !important;
+    background-color: var(--color-white) !important;
+}
+/* ================== Home page ========================== */
+.home-section{
+    background: url('../images/home.webp') no-repeat top center/cover;
+    height: 80vh;
+    color: var(--color-white);
+}
+.home-section .overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.courses .card-course:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+.courses .card-course .card-img-top{
+    height: 10rem;
+    object-fit: cover;
+}
+/* move buttons above and to the left of the swiper and remove default arrow glyphs */
+.swiper {
+    position: relative;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: -.2rem; /* adjust vertical offset as needed */
+    left: 0;
+    color: var(--color-primary);
+    background: transparent;
+    border: none;
+    padding: .35rem .6rem;
+    margin: 0;
+    transform: none;
+    box-shadow: none;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* place the "next" button to the right of the "prev" button */
+.swiper-button-next {
+    left: 4rem; /* adjust horizontal spacing as needed */
+}
+/* .swiper-button-prev {
+    right: unset !important;
+    left: 6rem !important;
+} */
+
+/* remove Swiper's default arrow glyphs (Swiper normally injects them via ::after) */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+    content: none;
+}
+
+/* optional: reduce interference from disabled state */
+.swiper-button-disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+.card-description{
+    height: 6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-title{
+    height: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* ================================ Footer =================== */
 .footer{
     background-color: var(--bg-color-main);
     padding-block: 2rem;
-    margin-top: 3rem;
     color: var(--color-white);
 }
 .socials a , .footer a{

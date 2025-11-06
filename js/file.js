@@ -1,3 +1,26 @@
+const swiper = new Swiper('.swiper-course', {
+  // Optional parameters
+  watchSlidesProgress: true,
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 20, // add spacing between slides (adjust value as needed)
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
 document.addEventListener('DOMContentLoaded', function () {
   var modalEl = document.getElementById('instructionsModal');
 
