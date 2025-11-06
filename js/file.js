@@ -19,9 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
     loop: true,
     spaceBetween: 20,
 
-    slidesPerView: 3, // default desktop
+    slidesPerView: 1, // default desktop
 
     breakpoints: {
+      0: {
+        slidesPerView: 1, // mobile
+      },
       768: {
         slidesPerView: 1 // mobile
       },
