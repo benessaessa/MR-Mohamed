@@ -11,33 +11,35 @@ document.addEventListener('DOMContentLoaded', function () {
   myModal.show();
 });
 const swiper = new Swiper('.swiper-course', {
-  // Optional parameters
+const swiper = new Swiper('.swiper-course', {
   watchSlidesProgress: true,
   loop: true,
-  slidesPerView: 3,
-  spaceBetween: 20, // add spacing between slides (adjust value as needed)
+  spaceBetween: 20,
+
+  slidesPerView: 3, // Default for desktop
+
   breakpoints: {
-    // when window width is <= 1024px (Tablet)
-    1024: {
-      slidesPerView: 2,
-    },
-    // when window width is <= 768px (Mobile)
     768: {
-      slidesPerView: 1,
+      slidesPerView: 1, // Mobile
+    },
+    1024: {
+      slidesPerView: 2, // Tablet
+    },
+    1200: {
+      slidesPerView: 3, // Desktop
     }
-  }
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
   },
 
-  // Navigation arrows
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
 
-  // And if we need scrollbar
   scrollbar: {
     el: '.swiper-scrollbar',
   },
