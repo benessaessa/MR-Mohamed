@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Show the modal
   myModal.show();
 });
-const swiper = new Swiper('.swiper-course', {
+
 const swiper = new Swiper('.swiper-course', {
   watchSlidesProgress: true,
   loop: true,
