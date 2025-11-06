@@ -12,6 +12,9 @@
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- aos library and animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -73,12 +76,12 @@
         </section>
     </main>
 
-    <section class="why-choose-section py-5 bg-light">
+    <section class="why-choose-section py-5">
         <div class="container">
             <h2 class="mb-5 text-center fw-bold">لماذا تختار مستر محمد؟</h2>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 card-course text-center border-0">
+                    <div class="card h-100 card-course text-center border-0" data-aos="flip-left">
                         <div class="card-body">
                             <div class="mb-3 display-6 text-primary"><i class="fas fa-chalkboard-teacher"></i></div>
                             <h5 class="fw-bold">شرح مبسط وواضح</h5>
@@ -88,7 +91,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 card-course text-center border-0">
+                    <div class="card h-100 card-course text-center border-0" data-aos="flip-left" data-aos-delay="100">
                         <div class="card-body">
                             <div class="mb-3 display-6 text-primary"><i class="fas fa-book-open"></i></div>
                             <h5 class="fw-bold">محتوى منظم وحديث</h5>
@@ -98,7 +101,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 card-course text-center border-0">
+                    <div class="card h-100 card-course text-center border-0" data-aos="flip-left" data-aos-delay="200">
                         <div class="card-body">
                             <div class="mb-3 display-6 text-primary"><i class="fas fa-clock"></i></div>
                             <h5 class="fw-bold">مرونة في التعلم</h5>
@@ -108,7 +111,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 card-course text-center border-0">
+                    <div class="card h-100 card-course text-center border-0" data-aos="flip-left" data-aos-delay="300">
                         <div class="card-body">
                             <div class="mb-3 display-6 text-primary"><i class="fas fa-award"></i></div>
                             <h5 class="fw-bold">دعم ومتابعة وشهادات</h5>
@@ -120,12 +123,12 @@
         </div>
     </section>
 
-    <div class="courses py-5">
+    <div class="courses bg-secondary py-5">
         <div class="container">
             <div class="row text-start">
                 <h2 class="mb-5 text-center fw-bold"> الصفوف الدراسية </h2>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 card-course">
+                    <div class="card h-100 card-course" data-aos="fade-up">
                         <a href="">
                             <img src="images/register.png" class="card-img-top" alt="Course 1">
                         </a>
@@ -138,7 +141,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 card-course">
+                    <div class="card h-100 card-course" data-aos="fade-up" data-aos-delay="100">
                         <a href="">
                             <img src="images/register.png" class="card-img-top" alt="Course 1">
                         </a>
@@ -151,7 +154,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100 card-course">
+                    <div class="card h-100 card-course" data-aos="fade-up" data-aos-delay="200">
                         <a href="">
                             <img src="images/register.png" class="card-img-top" alt="Course 1">
                         </a>
@@ -167,7 +170,7 @@
         </div>
     </div>
 
-    <div class="courses bg-light py-5">
+    <div class="courses py-5">
         <div class="container">
             <h2 class="mb-5 fw-bold text-center"> الكورسات المتاحة </h2>
             <div class="swiper swiper-course">
@@ -271,7 +274,7 @@
         </div>
     </div>
     <!-- Subscribe Section -->
-    <section class="subscribe-section py-5">
+    <section class="subscribe-section bg-secondary py-5">
         <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-8">

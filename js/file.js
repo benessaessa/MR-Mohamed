@@ -1,4 +1,6 @@
 
+AOS.init();
+
 document.addEventListener('DOMContentLoaded', function () {
   var modalEl = document.getElementById('instructionsModal');
 

@@ -8,11 +8,15 @@
     direction: rtl;
     --color-primary: #C48A50;
     --bg-color-primary: #C48A50;
+    --bg-color-first: #F5F5F5;
     --color-primary-hover: #b37c47; /* Slightly darker shade for hover */
     --color-on-primary: #ffffff;  
     --color-secondary: #8A9EA0;
     --color-white: #ffffff;
     --bg-color-main: #443120;
+}
+.bg-main{
+    background-color: var(--bg-color-first) !important;
 }
 /* Primary Button */
 .btn-primary {
@@ -46,6 +50,12 @@
 .bg-main{
     background-color: var(--bg-color-main) !important;
 }
+.bg-first{
+    background-color: var(--bg-color-first) !important;
+}
+body{
+    background-color: var(--bg-color-first);
+}
 .text-primary{
     color: var(--color-primary) !important;
 }
@@ -70,13 +80,13 @@ a,button,div,span,p{
 }
 .login-section{
     padding-top: 4.8rem;
-    background-color: var(--color-white);
+    background-color: var(--bg-color-first);
     /* height: 100vh; */
     align-items: center;
 }
 .login-form{
     padding-inline: 2rem;
-    background-color: var(--color-white);
+    background-color: var(--bg-color-first);
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -97,6 +107,9 @@ label{
 .navbar-toggler{
     border-color: var(--color-white) !important;
     background-color: var(--color-white) !important;
+}
+.modal .modal-body{
+    background-color: var(--bg-color-first);
 }
 /* ================== Home page ========================== */
 .home-section{
@@ -119,6 +132,16 @@ label{
 .courses .card-course .card-img-top{
     height: 10rem;
     object-fit: cover;
+}
+.why-choose-section .card:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+.why-choose-section .card:hover .text-primary , .why-choose-section .card:hover .text-muted{
+    color: var(--color-white) !important;
 }
 /* move buttons above and to the left of the swiper and remove default arrow glyphs */
 .swiper {
