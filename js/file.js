@@ -16,7 +16,16 @@ const swiper = new Swiper('.swiper-course', {
   loop: true,
   slidesPerView: 3,
   spaceBetween: 20, // add spacing between slides (adjust value as needed)
-
+  breakpoints: {
+    // when window width is <= 1024px (Tablet)
+    1024: {
+      slidesPerView: 2,
+    },
+    // when window width is <= 768px (Mobile)
+    768: {
+      slidesPerView: 1,
+    }
+  }
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
