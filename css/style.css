@@ -170,7 +170,7 @@ label{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.card-title{
+.card-title-course{
     height: 2rem;
     overflow: hidden;
     text-overflow: ellipsis;
