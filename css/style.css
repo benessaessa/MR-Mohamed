@@ -51,7 +51,7 @@ a{
     color: var(--bg-color-main) !important;
 }
 .bg-secondary{
-    background-color: var(--color-secondary) !important;
+    background-color: var(--bg-color-first) !important;
 }
 .bg-primary{
     background-color: var(--color-primary) !important;
