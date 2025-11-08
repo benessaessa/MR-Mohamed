@@ -110,7 +110,7 @@ label{
     color: var(--color-primary);
 }
 .linkColor{
-    color: var(--color-secondary);
+    color: var(--bg-color-main);
     text-decoration: none;
 }
 .navbar-toggler{
