@@ -107,7 +107,7 @@ a,button,div,span,p{
 label{
     font-size: .9rem;
     padding-bottom: .2rem;
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 .linkColor{
     color: var(--color-secondary);
