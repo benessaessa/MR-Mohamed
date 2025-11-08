@@ -6,14 +6,22 @@
     font-size: 16px;
     font-family: "Jannet";
     direction: rtl;
-    --color-primary: #C48A50;
-    --bg-color-primary: #C48A50;
-    --bg-color-first: #F5F5F5;
+    --color-primary: #67a9b5;
+    --bg-color-primary: #67a9b5;
+    --bg-color-first: #feffff;
+    --bg-color-cards: #edf7f6;
     --color-primary-hover: #b37c47; /* Slightly darker shade for hover */
     --color-on-primary: #ffffff;  
-    --color-secondary: #8A9EA0;
+    --color-secondary: #edf7f6;
     --color-white: #ffffff;
-    --bg-color-main: #443120;
+    --color-links: #d1e3e7;
+    --bg-color-main: #153357;
+}
+a{
+    color: var(--color-links) !important;
+}
+.btn{
+    border-radius: 1rem !important;
 }
 .bg-main{
     background-color: var(--bg-color-first) !important;
@@ -40,6 +48,7 @@
 .btn-secondary {
     background-color: var(--color-secondary) !important;
     border-color: var(--color-secondary) !important;
+    color: var(--bg-color-main) !important;
 }
 .bg-secondary{
     background-color: var(--color-secondary) !important;
@@ -110,6 +119,10 @@ label{
 }
 .modal .modal-body ,.modal .modal-header,.modal .modal-footer{
     background-color: var(--bg-color-first);
+}
+.card{
+    background-color: var(--bg-color-cards);
+    border: none;
 }
 /* ================== Home page ========================== */
 .home-section{
