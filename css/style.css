@@ -110,7 +110,7 @@ label{
     color: var(--color-primary);
 }
 .linkColor{
-    color: var(--bg-color-main);
+    color: var(--bg-color-main) !important;
     text-decoration: none;
 }
 .navbar-toggler{
@@ -123,6 +123,9 @@ label{
 .card{
     background-color: var(--bg-color-cards);
     border: none;
+}
+.bg-unset{
+    background-color: unset !important;
 }
 /* ================== Home page ========================== */
 .home-section{
