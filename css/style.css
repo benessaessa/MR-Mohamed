@@ -23,6 +23,7 @@ label{
 .navbar-toggler{
     border-color: var(--color-white) !important;
     background-color: var(--color-white) !important;
+    font-size: 1rem;
 }
 .modal .modal-body ,.modal .modal-header,.modal .modal-footer{
     background-color: var(--bg-color-first);
@@ -328,6 +329,13 @@ input:checked + .switch-label::after {
 }
 
 
+@media screen and (max-width: 335px) {
+    .theme-switch {
+        position: relative;
+        width: 86px;
+        height: 40px;
+    }
+}
 @media screen and (max-width: 768px) {
     .sidebar {
         display: none;
@@ -335,5 +343,7 @@ input:checked + .switch-label::after {
     .main-content {
         margin-right: 0;
     }
-    
+    .navbar .container-fluid {
+        padding: 0;
+    }
 }
