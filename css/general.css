@@ -1,0 +1,142 @@
+@font-face {
+    font-family: "Jannet";
+    src: url(../fonts/JannaLTRegular.ttf);
+}
+:root{
+    font-size: 16px;
+    font-family: "Jannet";
+    direction: rtl;
+    --color-primary: #67a9b5;
+    --bg-color-primary: #67a9b5;
+    --bg-color-first: #feffff;
+    --bg-color-cards: #edf7f6;
+    --color-primary-hover: #b37c47; /* Slightly darker shade for hover */
+    --color-on-primary: #ffffff;  
+    --color-secondary: #edf7f6;
+    --color-white: #ffffff;
+    --color-links: #d1e3e7;
+    --bg-color-main: #153357;
+    --bs-dropdown-bg: #153357;
+}
+.dark-mode{
+    --bg-color-main: #ffffff !important;
+    --bg-color-first: #f7f7f7 !important;
+    --color-links: #000000;
+    --color-white: #000000;
+    --bg-color-cards: #e0e0e0 !important;
+    --color-secondary: #cccccc !important;
+    --color-primary: #67a9b5 !important;
+    --color-on-primary: #000000 !important;
+}
+a{
+    color: var(--color-links) !important;
+}
+.btn{
+    border-radius: 1rem !important;
+}
+.bg-main{
+    background-color: var(--bg-color-first) !important;
+}
+/* Primary Button */
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+}
+
+/* Outline Primary */
+.btn-outline-primary {
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-primary) !important;
+    color: var(--color-on-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+.btn-secondary {
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
+    color: var(--bg-color-main) !important;
+}
+.dropdown-menu{
+    background-color: var(--bg-color-main) !important;
+}
+.dropdown-item{
+    color: var(--color-white) !important;
+}
+.dropdown-item:hover{
+    background-color: var(--color-primary) !important;
+    color: var(--color-on-primary) !important;
+}
+.dropdown-item.active{
+    background-color: var(--color-primary) !important;
+    color: var(--color-on-primary) !important;
+}
+.bg-secondary{
+    background-color: var(--bg-color-first) !important;
+}
+.bg-primary{
+    background-color: var(--color-primary) !important;
+}
+.bg-main{
+    background-color: var(--bg-color-main) !important;
+}
+.bg-first{
+    background-color: var(--bg-color-first) !important;
+}
+body{
+    background-color: var(--bg-color-first);
+}
+.text-primary{
+    color: var(--color-primary) !important;
+}
+a,button,div,span,p{
+    font-family: "Jannet";
+}
+.navbar{
+    background-color: var(--bg-color-main) !important;
+    margin-bottom: 10rem;
+    padding-inline: 1rem;
+}
+.navbar .nav-item .nav-link{
+    color: var(--color-white) !important;
+    font-size: 1.1rem;
+}
+.navbar .nav-item .nav-link:hover{
+    color: var(--color-primary) !important;
+}
+.navbar .nav-item .nav-link.active{
+    color: var(--color-primary) !important;
+    border-bottom: 2px solid var(--color-primary);
+}
+.navbar .navbar-img{
+    height: 3rem;
+    object-fit: cover;
+}
+.pagination .page-link{
+    color: var(--bg-color-main) !important;
+}
+.pagination .page-item.active .page-link{
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    color: var(--color-on-primary) !important;
+}
+.linkColor{
+    color: var(--bg-color-main) !important;
+    text-decoration: none;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+/* ================================ Footer =================== */
+.footer{
+    background-color: var(--bg-color-main);
+    padding-block: 2rem;
+    color: var(--color-white);
+}
+.socials a , .footer a{
+    color: var(--color-white);
+}
