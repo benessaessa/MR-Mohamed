@@ -368,6 +368,15 @@ input:checked + .switch-label::after {
     font-size: 1.2rem;
     font-weight: bold;
 }
+.nav-fatora .nav-link{
+    color: var(--color-primary) !important;
+    border-radius: .5rem;
+    margin: .2rem 0;
+}
+.nav-fatora .nav-link:hover, .nav-fatora .nav-link.active {
+    background-color: var(--color-primary) !important;
+    color: var(--color-on-primary) !important;  
+}
 /* ==================== Media screens ============== */
 
 @media screen and (max-width: 335px) {

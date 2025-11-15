@@ -194,11 +194,6 @@ table .min-vw-30{
     background-color: var(--color-table-bodey) !important;
     color: var(--color-white) !important;
 }
-.nav-fatora .nav-link{
-    color: var(--bg-color-main) !important;
-    border-radius: .5rem;
-    margin: .2rem 0;
-}
 /* ================================ Footer =================== */
 .footer{
     background-color: var(--bg-color-main);
