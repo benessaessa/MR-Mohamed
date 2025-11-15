@@ -17,16 +17,44 @@
     --color-links: #d1e3e7;
     --bg-color-main: #153357;
     --bs-dropdown-bg: #153357;
+    --color-gray-dark: #6c757d;
+    --color-gray-light: #f8f9fa;
+    --color-table-header: #d6d7d8;
+    --color-table-bodey: #838080;
 }
 .dark-mode{
-    --bg-color-main: #ffffff !important;
+    --bg-color-main: #000000 !important;
     --bg-color-first: #f7f7f7 !important;
-    --color-links: #000000;
-    --color-white: #000000;
-    --bg-color-cards: #e0e0e0 !important;
+    --color-links: #ffffff !important;
+    --bg-color-cards: #000000 !important;
     --color-secondary: #cccccc !important;
     --color-primary: #67a9b5 !important;
     --color-on-primary: #000000 !important;
+}
+.dark-mode{
+    background-color: var(--color-secondary) !important;
+}
+.dark-mode .sidebar .nav-link ,.dark-mode .sidebar .btn{
+    color: var(--color-white) !important;
+}
+.dark-mode .courses-tabs .nav-link{
+    color: var(--color-white) !important;
+    background-color: var(--bg-color-main) !important;
+}
+.dark-mode .sidebar .nav-link:hover ,.dark-mode .sidebar .nav-link.active ,.dark-mode .sidebar .btn:hover{
+    background-color: var(--color-white) !important;
+    color: var(--bg-color-main) !important;
+}
+.dark-mode .card .card-body .card-title ,.dark-mode .card .card-body,
+.dark-mode .card .card-body small ,.dark-mode .icon-circle i ,.dark-mode .progress-content h3{
+    color: var(--color-white) !important;
+}
+.dark-mode .sidebar{
+    background-color: var(--bg-color-main) !important;
+}
+.dark-mode .navbar .theme-switch .switch-label::after{
+    right: unset;
+    left: 8px;
 }
 a{
     color: var(--color-links) !important;
@@ -36,6 +64,12 @@ a{
 }
 .bg-main{
     background-color: var(--bg-color-first) !important;
+}
+.fs-12{
+    font-size: .75rem;
+}
+.fs-14{
+    font-size: .875rem;
 }
 /* Primary Button */
 .btn-primary {
@@ -130,6 +164,40 @@ a,button,div,span,p{
 }
 .cursor-pointer{
     cursor: pointer;
+}
+table th, table td{
+    border-color: var(--color-primary) !important;
+    font-size: .9rem;
+    white-space: nowrap;
+}
+table thead{
+    background-color: var(--bg-color-cards) !important;
+}
+table thead th{
+    background-color: var(--color-table-header) !important;
+    white-space: nowrap;
+}
+table .min-vw-20{
+    min-width: 12rem;
+}
+table tr:nth-child(even) td{
+    background-color: var(--color-gray-light) !important;
+}
+table .min-vw-30{
+    min-width: 14rem;
+}
+.dark-mode table thead th{
+    background-color: var(--bg-color-primary) !important;
+    color: var(--color-white) !important;
+}
+.dark-mode table tr td{
+    background-color: var(--color-table-bodey) !important;
+    color: var(--color-white) !important;
+}
+.nav-fatora .nav-link{
+    color: var(--bg-color-main) !important;
+    border-radius: .5rem;
+    margin: .2rem 0;
 }
 /* ================================ Footer =================== */
 .footer{

@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>كورساتنا المقترحة</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- aos library and animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex" href="dashboard.html">
+                <img src="images/logo.png" class="navbar-img" alt="">
+                <div class="d-lg-none d-flex align-items-center ms-3">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <label for="darkModeToggle" class="switch-label">
+                            <span class="icon sun"><i class="fas fa-sun"></i></span>
+                            <span class="icon moon"><i class="fas fa-moon"></i></span>
+                        </label>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Dark mode toggle -->
+                <div class="d-lg-flex d-none align-items-center ms-3">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <label for="darkModeToggle" class="switch-label">
+                            <span class="icon sun"><i class="fas fa-sun"></i></span>
+                            <span class="icon moon"><i class="fas fa-moon"></i></span>
+                        </label>
+                    </div>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 align-items-lg-center align-items-start pt-3 pt-lg-0">
+                    <!-- Notifications dropdown -->
+                    <div class="d-lg-none d-block">
+                        <li class="nav-item mb-3">
+                        <a href="dashboard.html" title="الرئيسية" class="nav-link">
+                            <i class="fas fa-home me-2"></i>
+                            <span> الرئيسية</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="my-courses.html" title="كورساتي" class="nav-link">
+                            <i class="fas fa-graduation-cap me-2"></i>
+                            <span>كورساتي</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="courses.html" title="جميع الكورسات" class="nav-link">
+                            <i class="fas fa-book me-2"></i>
+                            <span>جميع الكورسات</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="requests-courses.html" title="كورساتنا المقترحة" class="nav-link">
+                            <i class="fas fa-edit me-2"></i>
+                            <span>كورساتنا المقترحة</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="forum.html" title="المنتدي" class="nav-link">
+                            <i class="fas fa-comments me-2"></i>
+                            <span> المنتدي </span>
+                        </a>
+                    </li>
+                    </div>
+                    <li class="custom-badge d-flex align-items-center">
+                        <span class="ms-2">0 جنيه</span>
+                        <div class="icon-circle">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link position-relative" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+                            <i class="fas fa-bell fs-3"></i>
+                            <!-- <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger">3</span> -->
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationsDropdown">
+                            <li><h6 class="dropdown-header">الإشعارات</h6></li>
+                            <li><a class="dropdown-item" href="#">رسالة جديدة من المعلم</a></li>
+                            <li><a class="dropdown-item" href="#">تم إضافة درس جديد</a></li>
+                            <li><a class="dropdown-item" href="#">تذكير بدفع المحفظة</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-center" href="notifications.html">عرض كل الإشعارات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Profile dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الملف الشخصي">
+                            <i class="fa fa-user-circle fs-3"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="wallet.html"><i class="fas fa-wallet me-2"></i>المحفظة</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="logout.html"><i class="fas fa-sign-out-alt me-2"></i>تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Sidebar -->
+    <nav class="sidebar shadow-sm fixed-top pt-5" id="sidebar">
+        <div class="pt-4">
+            <!-- Toggle Button -->
+            <button id="toggleSidebar" class="btn ms-3 me-3 mb-3 mt-3 z-3 p-2 d-flex align-items-center" aria-label="Toggle sidebar">
+                <!-- left icon (hidden by default) -->
+                <i class="d-none" id="toggleIconLeft" aria-hidden="true"></i>
+                <span class="sidebar-text">تصغير القائمة</span>
+                <!-- right/expand icons -->
+                <i class="fas fa-angle-double-right ms-2" id="toggleIconRight" aria-hidden="true"></i>
+                <i class="fas fa-angle-double-left ms-2 d-none" id="toggleIconBothLeft" aria-hidden="true"></i>
+            </button>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-3">
+                    <a href="dashboard.html" title="الرئيسية" class="nav-link text-dark">
+                        <i class="fas fa-home me-2"></i>
+                        <span> الرئيسية</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="my-courses.html" title="كورساتي" class="nav-link text-dark">
+                        <i class="fas fa-graduation-cap me-2"></i>
+                        <span>كورساتي</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="courses.html" title="جميع الكورسات" class="nav-link text-dark">
+                        <i class="fas fa-book me-2"></i>
+                        <span>جميع الكورسات</span>
+                    </a>
+                </li>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="requests-courses.html" title="كورساتنا المقترحة" class="nav-link text-dark">
+                        <i class="fas fa-edit me-2"></i>
+                        <span>كورساتنا المقترحة</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="forum.html" title="المنتدي" class="nav-link text-dark">
+                        <i class="fas fa-comments me-2"></i>
+                        <span> المنتدي </span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="profile.html" title="الملف الشخصي" class="nav-link text-dark active">
+                    <i class="fas fa-user me-2"></i>
+                    <span>الملف الشخصي</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="container-fluid pt-5 mt-4">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card card-profile mb-4">
+                        <div class="card-body text-center">
+                            <p class="text-center">
+                                <i class="fa fa-user-circle fa-4x text-primary"></i>
+                            </p>
+                            <h6 class="card-title fw-bold"> محمد عيسي</h6>
+                            <p class="card-text fs-12 text-secondary">عضو منذ 12 يوم</p>
+                            <p class="card-text fs-12 mb-2">
+                                <span class="text-secondary">رقم الهاتف:</span> 
+                                <span class="fw-bold">0123456789</span> 
+                            </p>
+                            <p class="card-text fs-12 border-bottom pb-3 mb-2">
+                                <span class="text-secondary">رقم هاتف ولي الأمر:</span> 
+                                <span class="fw-bold">0123456789</span> 
+                            </p>
+                             <ul class="nav nav-tabs flex-column gap-2 border-0"
+                                id="profileTab"
+                                role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active w-100 text-start align-items-center d-flex"
+                                        id="overview-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#overview"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="overview"
+                                        aria-selected="true">
+                                        <i class="fas fa-chart-bar me-2"></i>
+                                        <span class="fs-14">الملف الشخصي</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link w-100 text-start align-items-center d-flex"
+                                        id="settings-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#settings"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="settings"
+                                        aria-selected="false">
+                                        <i class="fas fa-user-shield me-2"></i>
+                                        <span class="fs-14"> الأمان وتسجيل الدخول</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>   
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link w-100 text-start align-items-center d-flex"
+                                        id="activity-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#activity"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="activity"
+                                        aria-selected="false">
+                                        <i class="fas fa-newspaper me-2"></i>
+                                        <span class="fs-14">  نتائج الإمتحانات</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link w-100 text-start align-items-center d-flex"
+                                        id="homework-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#homework"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="homework"
+                                        aria-selected="false">
+                                        <i class="fas fa-newspaper me-2"></i>
+                                        <span class="fs-14">  نتائج الواجب</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link w-100 text-start align-items-center d-flex"
+                                        id="video-watch-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#video-watch"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="video-watch"
+                                        aria-selected="false">
+                                        <i class="fas fa-play-circle me-2"></i>
+                                        <span class="fs-14">  مشاهدات الفيديو </span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                             </ul>
+                             
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content tabs-profile" id="profileTabContent">
+                        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title">الملف الشخصي</h5> -->
+                                    <div class="card">
+                                        <div class="card-body px-0">
+                                            <div class="card d-flex flex-column justify-content-center">
+                                                <div class="card-body p-0">
+                                                    <div class="col-12 col-md-6">
+                                                        <div class="card d-flex bg-primary flex-column justify-content-center">
+                                                            <div class="card-body py-2 d-flex gap-3 align-items-center">
+                                                                <div>
+                                                                    <span class="bg-badge">
+                                                                        <i class="fas fa-wallet fa-3x text-white icon"></i>
+                                                                    </span>
+                                                                </div>
+                                                                <div>
+                                                                    <div class="title">الرصيد الحالي في حسابك</div>
+                                                                    <h4 class="mb-0 pb-0 fw-bolder"> 0 جنية</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h6 class="pt-4 fw-bold card-text">اشحن رصيد بأكثر من طريقة</h6>
+                                                    <p>اكتب الكود على كارت السنتر بتاعك عشان تشحنه على الأكوانت بتاعك أو اشحن عن طريق خدمة فوري.</p>
+                                                    <div class="d-flex gap-2 flex-column flex-md-row">
+                                                        <div>
+                                                            <button class="btn btn-primary w-100 px-4 py-2">
+                                                                اشحن الرصيد من فوري 
+                                                                <img src="images/fawry.png" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div>
+                                                            <button class="btn btn-outline-primary w-100 px-4 py-2">
+                                                                اشحن الرصيد من كود السنتر  
+                                                                <i class="fas fa-barcode"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="nav nav-tabs pt-3 nav-fatora" id="myTab" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">الفواتير</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">الإشتراكات</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">كورساتي</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">الأمان وتسجيل الدخول</h5>
+                                    <div class="text-center">
+                                        <h6>عدد مرات تسجيل الخروج خلال اليوم</h6>
+                                        <h6 class="fw-bold bg-danger rounded-pill text-center p-2">لم يتم تسجيل الخروج بواسطة المستخدم اليوم</h6>
+                                        <h6>عدد مرات تسجيل الخروج خلال الأسبوع</h6>
+                                        <h6 class="fw-bold bg-danger rounded-pill text-center p-2">لم يتم تسجيل الخروج بواسطة المستخدم هذا الأسبوع</h6>
+                                        <h6 class="fw-bold bg-warning rounded-pill text-center p-2"> تلقائي من خلال التسجيل في جهاز آخر <span class="bg-white text-black rounded-circle px-2">1</span>   مرة واحدة </h6>
+                                    </div>
+                                    <div class="table-responsive pb-2 pt-3">
+                                        <table class="table table-borderless">
+                                            <thead class="border-bottom">
+                                                <tr>
+                                                    <th scope="row">نوع الجهاز	</th>
+                                                    <th> اسم الجهاز		</th>
+                                                    <th> نظام التشغيل		</th>
+                                                    <th> المتصفح	</th>
+                                                    <th> اخر نشاط		</th>
+                                                    <th> تاريخ تسجيل الدخول	</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <td scope="row">Desktop</td>
+                                                    <td>Unknown</td>
+                                                    <td>Windows 10	</td>
+                                                    <td>Chrome 142	</td>
+                                                    <td>02:00 الخميس، ١ يناير ١٩٧٠</td>
+                                                    <td>22:10 السبت، ١٥ نوفمبر ٢٠٢٥</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">نتائج الإمتحانات</h5>
+                                    <div class="table-responsive pb-2">
+                                        <table class="table table-borderless">
+                                            <thead class="border-bottom">
+                                                <tr>
+                                                    <th scope="row">التسلسل</th>
+                                                    <th> اسم الامتحان	</th>
+                                                    <th> عدد الاسئلة	</th>
+                                                    <th> النتيجة	</th>
+                                                    <th> الدرجة	</th>
+                                                    <th> عدد الاسئلة المحلولة	</th>
+                                                    <th> عدد الاسئلة الصحيحة	</th>
+                                                    <th> الاجابات	</th>
+                                                    <th> وقت انهاء الامتحان	</th>
+                                                    <th> وقت بدأ الامتحان	</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <td scope="row">800353	</td>
+                                                    <td class="min-vw-20">مراجعة الفصل الاول كامل - شرح	</td>
+                                                    <td>100</td>
+                                                    <td>120</td>
+                                                    <td>12</td>
+                                                    <td>10</td>
+                                                    <td>3</td>
+                                                    <td>34</td>
+                                                    <td>10:20</td>
+                                                    <td>9:20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">800353	</td>
+                                                    <td class="min-vw-20">مراجعة الفصل الاول كامل - شرح	</td>
+                                                    <td>100</td>
+                                                    <td>120</td>
+                                                    <td>12</td>
+                                                    <td>10</td>
+                                                    <td>3</td>
+                                                    <td>34</td>
+                                                    <td>10:20</td>
+                                                    <td>9:20</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                        <div class="align-items-center d-none d-md-flex">
+                                            <span class="fs-12"> 1 - 1 من 1 </span> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="homework" role="tabpanel" aria-labelledby="homework-tab">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">نتائج الواجب</h5>
+                                    <div class="table-responsive pb-2">
+                                        <table class="table table-borderless">
+                                            <thead class="border-bottom">
+                                                <tr>
+                                                    <th scope="row">التسلسل</th>
+                                                    <th> اسم الواجب	</th>
+                                                    <th> عدد الاسئلة	</th>
+                                                    <th> النتيجة	</th>
+                                                    <th> الدرجة	</th>
+                                                    <th> عدد الاسئلة المحلولة	</th>
+                                                    <th> عدد الاسئلة الصحيحة	</th>
+                                                    <th> الاجابات	</th>
+                                                    <th> وقت انهاء الواجب	</th>
+                                                    <th> وقت بدأ الواجب	</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <td scope="row">800353	</td>
+                                                    <td class="min-vw-20">مراجعة الفصل الاول كامل - شرح	</td>
+                                                    <td>100</td>
+                                                    <td>120</td>
+                                                    <td>12</td>
+                                                    <td>10</td>
+                                                    <td>3</td>
+                                                    <td>34</td>
+                                                    <td>10:20</td>
+                                                    <td>9:20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">800353	</td>
+                                                    <td class="min-vw-20">مراجعة الفصل الاول كامل - شرح	</td>
+                                                    <td>100</td>
+                                                    <td>120</td>
+                                                    <td>12</td>
+                                                    <td>10</td>
+                                                    <td>3</td>
+                                                    <td>34</td>
+                                                    <td>10:20</td>
+                                                    <td>9:20</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                        <div class="align-items-center d-none d-md-flex">
+                                            <span class="fs-12"> 1 - 1 من 1 </span> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="video-watch" role="tabpanel" aria-labelledby="video-watch-tab">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4"> مشاهدات الفيديو</h5>
+                                    <div class="table-responsive pb-2">
+                                        <table class="table table-borderless">
+                                            <thead class="border-bottom">
+                                                <tr>
+                                                    <th scope="row">التسلسل</th>
+                                                    <th>اسم الفيديو	</th>
+                                                    <th>اسم الكورس	</th>
+                                                    <th>مدة المشاهدة</th>
+                                                    <th>وقت المشاهدة</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <td scope="row">800353	</td>
+                                                    <td class="min-vw-20">مراجعة الفصل الاول كامل - شرح	</td>
+                                                    <td class="min-vw-30">باقة الـ 4 شهور - بداية من الفصل التانى	</td>
+                                                    <td class="min-vw-20">	-- لم يتم تشغيل الفيديو --</td>
+                                                    <td class="min-vw-20">السبت، ١ نوفمبر ٢٠٢٥</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">800353	</td>
+                                                    <td class="min-vw-20">مراجعة الفصل الاول كامل - شرح	</td>
+                                                    <td class="min-vw-30">باقة الـ 4 شهور - بداية من الفصل التانى	</td>
+                                                    <td class="min-vw-20">	-- لم يتم تشغيل الفيديو --</td>
+                                                    <td class="min-vw-20">السبت، ١ نوفمبر ٢٠٢٥</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                        <div class="align-items-center d-none d-md-flex">
+                                           <span class="fs-12"> 1 - 1 من 1 </span> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer p-4">
+        <div class="container-fluid pt-4">
+            <div class="row justify-content-between">
+                <div class="col-lg-6 col-md-6"><img src="images/logo.png" alt="img" height="65px">
+                    <p class="pt-4 smallText">
+                        منصة تعليمية تهدف الي تعليم الطلاب بأحدث الطرق الحديثة وابسطها
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-5">
+                    <p class="smallText mb-2">تواصل معنا من خلال</p>
+                    <p class="socials">
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-facebook-square"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-whatsapp"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-youtube-square"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-instagram"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="row border-top mt-4 linkFooter border-secondary justify-content-between text-start">
+                <div class="col-lg-6 col-md-5">
+                    <p class="pt-3 d-none d-md-block">جميع الحقوق محفوظة &copy;
+                        <a href="https://www.facebook.com/mohamed.essa.abdelhamead/">Mohamed Essa</a>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-md-6 pt-3">
+                    <div class="d-flex justify-content-end">
+                        <div>
+                            <a class="text-decoration-none px-2" href="/privacy-policy">الخصوصية</a>
+                            <a class="text-decoration-none px-2" href="/terms">الشروط والأحكام</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/file.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</html>
