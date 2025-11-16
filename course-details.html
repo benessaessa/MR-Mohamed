@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title> الصفحة الرئيسية</title>
+    <title>تفاصيل الكورس</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -149,7 +149,7 @@
                 </a>
             </li>
             <li class="nav-item mb-3">
-                <a href="courses.html" title="جميع الكورسات" class="nav-link text-dark active">
+                <a href="courses.html" title="جميع الكورسات" class="nav-link text-dark">
                 <i class="fas fa-book me-2"></i>
                 <span>جميع الكورسات</span>
                 </a>
@@ -179,160 +179,132 @@
     <div class="main-content">
         <!-- End Navbar -->
         <div class="container mt-5 pt-4">
-        <h2 class="mb-4 text-center pt-2">الكورسات المتاحة</h2>
-        <!-- Tabs -->
-        <ul class="nav courses-tabs nav-tabs justify-content-center gap-2 pb-3" id="courseTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="offers-courses-tab" data-bs-toggle="tab" href="#offers-courses" role="tab" aria-controls="offers-courses" aria-selected="true"> العروض والباقات</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="primary-courses-tab" data-bs-toggle="tab" href="#primary-courses" role="tab" aria-controls="primary-courses" aria-selected="false">  الإشتراكات الشهرية</a>
-            </li>
-        </ul>
-
-        <div class="tab-content courses pt-4" id="courseTabsContent">
-            <div class="tab-pane fade show active" id="offers-courses" role="tabpanel" aria-labelledby="offers-courses-tab">
-                <div class="row text-start">
-                    <!-- All Courses Content -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 w-100 card-course">
-                            <a href="course-details.html">
-                                <img src="images/home.webp" class="card-img-top" alt="Course 1">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title-course fw-bold"> مراجعة شهر نوفمبر اولي ثانوي </h5>
-
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <small class="text-muted">
-                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        10 مارس 2025
-                                    </small>
-                                    <span class="badge bg-success">100 جنية</span>
+            <div class="row">
+                <!-- Course Image and Basic Info -->
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <img src="images/home.webp" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <h1 class="card-title fw-bold mb-3">مراجعة شهر نوفمبر اولي ثانوي</h1>
+                            <p class="card-text lead">دورة شاملة تغطي أهم الموضوعات مع شروحات مبسطة وتمارين تطبيقية ومراجعات سريعة لتثبيت المعلومات.</p>
+                            <div class="row mb-1 pt-2">
+                                <div class="col-md-6">
+                                    <p><i class="fas fa-user me-2"></i><strong>المعلم:</strong> أحمد محمد</p>
                                 </div>
-
-                                <p class="card-text card-description">دورة شاملة تغطي أهم الموضوعات مع شروحات مبسطة وتمارين تطبيقية ومراجعات سريعة لتثبيت المعلومات.</p>
-                                <a href="course-details.html" class="btn btn-primary w-100 mb-3"> الدخول للكورس <i class="fas fa-video"></i></a>
-                                <a href="course-details.html" class="btn btn-outline-primary w-100"> الإشتراك في الكورس <i class="fas fa-credit-card"></i></a>
+                                <div class="col-md-6">
+                                    <p><i class="fas fa-clock me-2"></i><strong>المدة:</strong> 4 أسابيع</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p><i class="fas fa-calendar-alt me-2"></i><strong>تاريخ البدء:</strong> 10 مارس 2025</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><i class="fas fa-users me-2"></i><strong>عدد الطلاب:</strong> 150 طالب</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 w-100 card-course">
-                            <a href="course-details.html">
-                                <img src="images/home.webp" class="card-img-top" alt="Course 1">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title-course fw-bold"> مراجعة شهر نوفمبر اولي ثانوي </h5>
 
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <small class="text-muted">
-                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        10 مارس 2025
-                                    </small>
-                                    <span class="badge bg-success">100 جنية</span>
+                    <!-- Course Content Tabs -->
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs nav-fatora" id="courseDetailsTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">نظرة عامة</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button" role="tab" aria-controls="curriculum" aria-selected="false">المنهج</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="courseDetailsTabsContent">
+                                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                                    <h5>وصف الكورس</h5>
+                                    <p>هذا الكورس مصمم خصيصاً لطلاب الصف الأول الثانوي لمراجعة شهر نوفمبر. يغطي الكورس جميع المواد الأساسية مع التركيز على النقاط المهمة والأسئلة المتوقعة في الامتحانات.</p>
+                                    <h6>ما ستتعلمه:</h6>
+                                    <ul>
+                                        <li>فهم عميق للمواد الأساسية</li>
+                                        <li>حل المسائل المعقدة بطريقة مبسطة</li>
+                                        <li>تقنيات المراجعة الفعالة</li>
+                                        <li>إدارة الوقت في الامتحانات</li>
+                                    </ul>
                                 </div>
-
-                                <p class="card-text card-description">دورة شاملة تغطي أهم الموضوعات مع شروحات مبسطة وتمارين تطبيقية ومراجعات سريعة لتثبيت المعلومات.</p>
-                                <a href="course-details.html" class="btn btn-primary w-100 mb-3"> الدخول للكورس <i class="fas fa-video"></i></a>
-                                <a href="course-details.html" class="btn btn-outline-primary w-100"> الإشتراك في الكورس <i class="fas fa-credit-card"></i></a>
+                                <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
+                                    <h5>محتوى الكورس</h5>
+                                    <div class="accordion" id="curriculumAccordion">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    الأسبوع الأول: المراجعة الأساسية
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#curriculumAccordion">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>درس 1: مقدمة في المواد الأساسية</li>
+                                                        <li>درس 2: حل المسائل البسيطة</li>
+                                                        <li>درس 3: تمارين تطبيقية</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    الأسبوع الثاني: التعمق في المواضيع
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#curriculumAccordion">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>درس 4: المواضيع المتقدمة</li>
+                                                        <li>درس 5: حل المسائل المعقدة</li>
+                                                        <li>درس 6: مراجعة شاملة</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Add more weeks as needed -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Add more courses here -->
                 </div>
-            </div>
-            <div class="tab-pane fade" id="primary-courses" role="tabpanel" aria-labelledby="primary-courses-tab">
-                <div class="row text-start">
-                    <!-- Primary Courses Content -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 w-100 card-course">
-                            <a href="course-details.html">
-                                <img src="images/register.png" class="card-img-top" alt="Course 1">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title-course fw-bold"> مراجعة شهر نوفمبر اولي ثانوي </h5>
 
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <small class="text-muted">
-                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        10 مارس 2025
-                                    </small>
-                                    <span class="badge bg-success">مجاني</span>
-                                </div>
-
-                                <p class="card-text card-description">دورة شاملة تغطي أهم الموضوعات مع شروحات مبسطة وتمارين تطبيقية ومراجعات سريعة لتثبيت المعلومات.</p>
-                                <a href="course-details.html" class="btn btn-primary w-100 mb-3"> الدخول للكورس <i class="fas fa-video"></i></a>
-                                <a href="course-details.html" class="btn btn-outline-primary w-100"> الإشتراك في الكورس <i class="fas fa-credit-card"></i></a>
+                <!-- Sidebar with Enrollment Info -->
+                <div class="col-lg-4">
+                    <div class="card sticky-top" style="top: 20px;">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <span class="badge bg-success fs-5 p-2">100 جنية</span>
+                            </div>
+                            <a href="course-details.html" class="btn btn-primary w-100 mb-3">الإشتراك في الكورس <i class="fas fa-credit-card"></i></a>
+                            <a href="course-details.html" class="btn btn-outline-primary w-100 mb-3">الدخول للكورس <i class="fas fa-video"></i></a>
+                            <hr>
+                            <h6>تفاصيل الكورس</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-play-circle me-2"></i>12 درس</li>
+                                <li><i class="fas fa-clock me-2"></i>4 أسابيع</li>
+                                <li><i class="fas fa-language me-2"></i>العربية</li>
+                                <li><i class="fas fa-certificate me-2"></i>شهادة إتمام</li>
+                                <li><i class="fas fa-mobile-alt me-2"></i>متوافق مع الهواتف</li>
+                            </ul>
+                            <hr>
+                            <h6>شارك الكورس</h6>
+                            <div class="d-flex justify-content-around socials-share pt-3">
+                                <a href="#" class="text-decoration-none"><i class="fab fa-facebook-f fs-4"></i></a>
+                                <a href="#" class="text-decoration-none"><i class="fab fa-twitter fs-4"></i></a>
+                                <a href="#" class="text-decoration-none"><i class="fab fa-whatsapp fs-4"></i></a>
+                                <a href="#" class="text-decoration-none"><i class="fab fa-linkedin-in fs-4"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 w-100 card-course">
-                            <a href="course-details.html">
-                                <img src="images/register.png" class="card-img-top" alt="Course 1">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title-course fw-bold"> مراجعة شهر نوفمبر اولي ثانوي </h5>
-
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <small class="text-muted">
-                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        10 مارس 2025
-                                    </small>
-                                    <span class="badge bg-success">مجاني</span>
-                                </div>
-
-                                <p class="card-text card-description">دورة شاملة تغطي أهم الموضوعات مع شروحات مبسطة وتمارين تطبيقية ومراجعات سريعة لتثبيت المعلومات.</p>
-                                <a href="course-details.html" class="btn btn-primary w-100 mb-3"> الدخول للكورس <i class="fas fa-video"></i></a>
-                                <a href="course-details.html" class="btn btn-outline-primary w-100"> الإشتراك في الكورس <i class="fas fa-credit-card"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 w-100 card-course">
-                            <a href="course-details.html">
-                                <img src="images/register.png" class="card-img-top" alt="Course 1">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title-course fw-bold"> مراجعة شهر نوفمبر اولي ثانوي </h5>
-
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <small class="text-muted">
-                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        10 مارس 2025
-                                    </small>
-                                    <span class="badge bg-success">مجاني</span>
-                                </div>
-
-                                <p class="card-text card-description">دورة شاملة تغطي أهم الموضوعات مع شروحات مبسطة وتمارين تطبيقية ومراجعات سريعة لتثبيت المعلومات.</p>
-                                <a href="course-details.html" class="btn btn-primary w-100 mb-3"> الدخول للكورس <i class="fas fa-video"></i></a>
-                                <a href="course-details.html" class="btn btn-outline-primary w-100"> الإشتراك في الكورس <i class="fas fa-credit-card"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more primary courses here -->
                 </div>
             </div>
         </div>
-
-        <!-- Pagination -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center mt-4 mb-5">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
     </div>
     </div>
     <!-- Footer -->

@@ -194,6 +194,9 @@ table .min-vw-30{
     background-color: var(--color-table-bodey) !important;
     color: var(--color-white) !important;
 }
+.dark-mode .socials-share a{
+    color: var(--bg-color-first) !important;
+}
 /* ================================ Footer =================== */
 .footer{
     background-color: var(--bg-color-main);

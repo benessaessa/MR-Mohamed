@@ -377,6 +377,9 @@ input:checked + .switch-label::after {
     background-color: var(--color-primary) !important;
     color: var(--color-on-primary) !important;  
 }
+.socials-share a{
+    color: var(--bg-color-main) !important;
+}
 /* ==================== Media screens ============== */
 
 @media screen and (max-width: 335px) {
