@@ -85,12 +85,14 @@
                         </a>
                     </li>
                     </div>
-                    <li class="custom-badge d-flex align-items-center">
-                        <span class="ms-2">0 جنيه</span>
-                        <div class="icon-circle">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                    </li>
+                    <a href="profile.html" class="text-decoration-none">
+                        <li class="custom-badge d-flex align-items-center">
+                            <span class="ms-2">0 جنيه</span>
+                            <div class="icon-circle">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                        </li>
+                    </a>
                     <li class="nav-item dropdown">
                         <a class="nav-link position-relative" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
                             <i class="fas fa-bell fs-3"></i>
@@ -334,9 +336,120 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <div class="table-responsive pb-2 pt-3">
+                                                <table class="table table-borderless">
+                                                    <thead class="border-bottom">
+                                                        <tr>
+                                                            <th scope="row"> التسلسل </th>
+                                                            <th>اجمالي سعر الفاتورة	</th>
+                                                            <th>التخفيض</th>
+                                                            <th>الكوبون</th>
+                                                            <th>عدد المشتريات	</th>
+                                                            <th>المشتريات</th>
+                                                            <th>حالة الدفع	</th>
+                                                            <th>وقت الدفع	</th>
+                                                            <th>طريقة الدفع	</th>
+                                                            <th>رقم الفاتورة	</th>
+                                                            <th>وقت انشاء الفاتورة</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <td scope="row">Desktop</td>
+                                                            <td>2323</td>
+                                                            <td>6868</td>
+                                                            <td>43378</td>
+                                                            <td> 10	</td>
+                                                            <td>Chrome 142	</td>
+                                                            <td>تم الدفع</td>
+                                                            <td>02:00 الخميس، ١ يناير ١٩٧٠</td>
+                                                            <td>تم الدفع</td>
+                                                            <td>123</td>
+                                                            <td>22:10 السبت، ١٥ نوفمبر ٢٠٢٥</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="d-flex justify-content-between mt-4">
+                                                <nav aria-label="Page navigation">
+                                                    <ul class="pagination">
+                                                        <li class="page-item disabled">
+                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                                <div class="align-items-center d-none d-md-flex">
+                                                <span class="fs-12"> 1 - 1 من 1 </span> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div class="table-responsive pb-2 pt-3">
+                                                <table class="table table-borderless">
+                                                    <thead class="border-bottom">
+                                                        <tr>
+                                                            <th scope="row"> التسلسل </th>
+                                                            <th>  اسم الطالب	</th>
+                                                            <th>اسم الكورس	</th>
+                                                            <th>طريقة الاشتراك	</th>
+                                                            <th> السعر	</th>
+                                                            <th>رقم الفاتورة	</th>
+                                                            <th> تاريخ الاشتراك	</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <td scope="row">Desktop</td>
+                                                            <td>2323</td>
+                                                            <td>6868</td>
+                                                            <td>43378</td>
+                                                            <td> 10	</td>
+                                                            <td>Chrome 142	</td>
+                                                            <td> 10/10/2025 </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="d-flex justify-content-between mt-4">
+                                                <nav aria-label="Page navigation">
+                                                    <ul class="pagination">
+                                                        <li class="page-item disabled">
+                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                                <div class="align-items-center d-none d-md-flex">
+                                                <span class="fs-12"> 1 - 1 من 1 </span> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                            <div class="text-center py-4">
+                                                <h6 class="pb-2">تقدر تشوف الكورسات اللي انت مشترك فيها من خلال</h6>
+                                                <a href="my-courses.html" class="btn btn-outline-primary px-5">الذهاب لكورساتك</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -169,6 +169,7 @@ table th, table td{
     border-color: var(--color-primary) !important;
     font-size: .9rem;
     white-space: nowrap;
+    padding: 1rem !important;
 }
 table thead{
     background-color: var(--bg-color-cards) !important;
