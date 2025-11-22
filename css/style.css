@@ -395,6 +395,7 @@ input:checked + .switch-label::after {
     }
     .main-content {
         margin-right: 0;
+        padding: 20px 0;
     }
     .navbar .container-fluid {
         padding: 0;
