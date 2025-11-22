@@ -210,6 +210,10 @@ table .min-vw-30{
     background-color: var(--bg-color-main) !important;
     color: var(--color-white) !important;
 }
+.dark-mode .list-group-numbered .list-group-item{
+    background-color: var(--bg-color-main) !important;
+    color: var(--color-white) !important;
+}
 .custom-position-btn{
     right: unset;
     left: 70px; 
