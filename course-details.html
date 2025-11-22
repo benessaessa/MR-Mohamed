@@ -185,8 +185,8 @@
                 <!-- Course Image and Basic Info -->
                 <div class="col-lg-8">
                     <div class="card mb-4">
-                        <!-- <img src="images/home.webp" class="card-img-top" alt="Course Image"> -->
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LgB3j2y1b-4?si=Bj0SOj9yBuFa7CFt&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <img src="images/home.webp" class="card-img-top" alt="Course Image">
+                        <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/LgB3j2y1b-4?si=Bj0SOj9yBuFa7CFt&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
                         <div class="card-body">
                             <h1 class="card-title fw-bold mb-3">مراجعة شهر نوفمبر اولي ثانوي</h1>
                             <p class="card-text lead">دورة شاملة تغطي أهم الموضوعات مع شروحات مبسطة وتمارين تطبيقية ومراجعات سريعة لتثبيت المعلومات.</p>
@@ -214,16 +214,420 @@
                         <div class="card-header">
                             <ul class="nav nav-tabs nav-fatora" id="courseDetailsTabs" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">نظرة عامة</button>
+                                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true"> الدروس</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button" role="tab" aria-controls="curriculum" aria-selected="false">المنهج</button>
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button" role="tab" aria-controls="curriculum" aria-selected="false">ما ستتعلمه</button>
                                 </li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content" id="courseDetailsTabsContent">
                                 <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                                    <h5>محتوى الكورس</h5>
+                                     <div class="accordion" id="mainAccordion">
+                                        <!-- MAIN ITEM -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="mainLesson">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mainCollapse">
+                                                    <i class="fa fa-book-open me-2"></i>
+                                                    الأسبوع الأول - المحاضرة الأولي
+                                                </button>
+                                            </h2>
+
+                                            <div id="mainCollapse" class="accordion-collapse collapse show" data-bs-parent="#mainAccordion">
+                                                <div class="accordion-body">
+
+                                                    <!-- SUB ACCORDION INSIDE MAIN -->
+                                                    <div class="accordion" id="subAccordion">
+
+                                                        <!-- Sub 1 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub1">
+                                                                <button class="accordion-button collapsed" 
+                                                                        type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse1">
+                                                                    
+                                                                    <div class="d-flex align-items-center w-100 me-3">
+                                                                        <div class="sub-icon"><i class="me-2 fa fa-play-circle"></i></div>
+                                                                        <span>   المحاضرة الأولي - شرح</span>
+                                                                    </div>
+                                                                    
+                                                                </button>
+                                                                
+                                                                <!-- Link OUTSIDE the button -->
+                                                                <a href="https://www.youtube.com/embed/LgB3j2y1b-4?si=Bj0SOj9yBuFa7CFt&start=2" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                 مشاهدة الفيديو
+                                                                </a>
+                                                            </h2>
+
+                                                            <div id="subCollapse1" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    <p>
+                                                                        <span class="fw-bold">الوصف:</span>
+                                                                        <span>مراجعة الفصل الاول كامل - شرح</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">المدة:</span>
+                                                                        <span>45 دقيقة</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">الفيديو:</span>
+                                                                        <span>
+                                                                            <a class="linkColor text-decoration-underline" href="https://www.youtube.com/embed/LgB3j2y1b-4?si=Bj0SOj9yBuFa7CFt&start=2" target="_blank" rel="noreferrer">
+                                                                                مشاهدة الفيديو
+                                                                            </a>
+                                                                        </span> 
+                                                                    </p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 3 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sublesson">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapseLesson3">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    ملزمة  الدرس الاول
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                    فتح الملف 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapseLesson3" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    ملف Pdf يحتوي مراجعة شاملة + مختصر الدرس.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 3 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="subHomeworkLesson">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapseHomeworkLesson">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    ملزمة واجب الدرس الاول
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                    فتح الملف 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapseHomeworkLesson" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    ملف Pdf يحتوي مراجعة شاملة + مختصر الدرس.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 2 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub2">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse2">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-chalkboard-teacher"></i> </div>
+                                                                     فيديو واجب الدرس الأول - شرح
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                     مشاهدة الفيديو 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapse2" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                     <p>
+                                                                        <span class="fw-bold">الوصف:</span>
+                                                                        <span>مراجعة الفصل الاول كامل - شرح</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">المدة:</span>
+                                                                        <span>45 دقيقة</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">عدد المشاهدات المتبقية لك :</span>
+                                                                        <span>4</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">إجمالي وقت مشاهداتك :</span>
+                                                                        <span>0 : دقيقة</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">الفيديو:</span>
+                                                                        <span>
+                                                                            <a class="linkColor text-decoration-underline" href="https://www.youtube.com/embed/LgB3j2y1b-4?si=Bj0SOj9yBuFa7CFt&start=2" target="_blank" rel="noreferrer">
+                                                                                مشاهدة الفيديو
+                                                                            </a>
+                                                                        </span> 
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 3 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub3">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse3">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    تسليم واجب الدرس الاول
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                    فتح الواجب 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapse3" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    ملف Pdf يحتوي مراجعة شاملة + مختصر الدرس.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 4 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub4">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse4">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    اجابات كتاب الفصل الاول
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                    فتح الملف 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapse4" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    جميع إجابات كتاب الوزارة كاملة.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 5 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub5">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse5">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    إمتحان المحاضرة الأولي
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                     إمتحن 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapse5" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    امتحان شامل + نموذج إجابة مفصل.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div> <!-- END SUB ACCORDION -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="mainLesson2">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainCollapse2">
+                                                    <i class="fa fa-book-open me-2"></i>
+                                                    الأسبوع الثاني - المحاضرة الثانية  
+                                                </button>
+                                            </h2>
+                                            <div id="mainCollapse2" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                                                <div class="accordion-body">
+
+                                                    <!-- SUB ACCORDION INSIDE MAIN -->
+                                                    <div class="accordion" id="subAccordion">
+
+                                                        <!-- Sub 1 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub1">
+                                                                <button class="accordion-button collapsed" 
+                                                                        type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse1">
+                                                                    
+                                                                    <div class="d-flex align-items-center w-100 me-3">
+                                                                        <div class="sub-icon"><i class="me-2 fa fa-play-circle"></i></div>
+                                                                        <span>   المحاضرة الأولي - شرح</span>
+                                                                    </div>
+                                                                    
+                                                                </button>
+                                                                
+                                                                <!-- Link OUTSIDE the button -->
+                                                                <a href="https://www.youtube.com/embed/LgB3j2y1b-4?si=Bj0SOj9yBuFa7CFt&start=2" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                 مشاهدة الفيديو
+                                                                </a>
+                                                            </h2>
+
+                                                            <div id="subCollapse1" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    <p>
+                                                                        <span class="fw-bold">الوصف:</span>
+                                                                        <span>مراجعة الفصل الاول كامل - شرح</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">المدة:</span>
+                                                                        <span>45 دقيقة</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">الفيديو:</span>
+                                                                        <span>
+                                                                            <a class="linkColor text-decoration-underline" href="https://www.youtube.com/embed/LgB3j2y1b-4?si=Bj0SOj9yBuFa7CFt&start=2" target="_blank" rel="noreferrer">
+                                                                                مشاهدة الفيديو
+                                                                            </a>
+                                                                        </span> 
+                                                                    </p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 3 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sublesson">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapseLesson3">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    ملزمة  الدرس الاول
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                    فتح الملف 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapseLesson3" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    ملف Pdf يحتوي مراجعة شاملة + مختصر الدرس.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 3 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="subHomeworkLesson">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapseHomeworkLesson">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    ملزمة واجب الدرس الاول
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                    فتح الملف 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapseHomeworkLesson" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    ملف Pdf يحتوي مراجعة شاملة + مختصر الدرس.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 2 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub2">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse2">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-chalkboard-teacher"></i> </div>
+                                                                     فيديو واجب الدرس الأول - شرح
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                     مشاهدة الفيديو 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapse2" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                     <p>
+                                                                        <span class="fw-bold">الوصف:</span>
+                                                                        <span>مراجعة الفصل الاول كامل - شرح</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">المدة:</span>
+                                                                        <span>45 دقيقة</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">عدد المشاهدات المتبقية لك :</span>
+                                                                        <span>4</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">إجمالي وقت مشاهداتك :</span>
+                                                                        <span>0 : دقيقة</span>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="fw-bold">الفيديو:</span>
+                                                                        <span>
+                                                                            <a class="linkColor text-decoration-underline" href="https://www.youtube.com/embed/LgB3j2y1b-4?si=Bj0SOj9yBuFa7CFt&start=2" target="_blank" rel="noreferrer">
+                                                                                مشاهدة الفيديو
+                                                                            </a>
+                                                                        </span> 
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 3 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub3">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse3">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    تسليم واجب الدرس الاول
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                    فتح الواجب 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapse3" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    ملف Pdf يحتوي مراجعة شاملة + مختصر الدرس.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 4 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub4">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse4">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    اجابات كتاب الفصل الاول
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                    فتح الملف 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapse4" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    جميع إجابات كتاب الوزارة كاملة.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sub 5 -->
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header position-relative" id="sub5">
+                                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subCollapse5">
+                                                                    <div class="sub-icon"><i class="me-2 fa fa-book-open"></i></div>
+                                                                    إمتحان المحاضرة الأولي
+                                                                </button>
+                                                                <a href="#" target="_blank" rel="noreferrer" 
+                                                                    class="btn btn-primary btn-sm position-absolute custom-position-btn">
+                                                                     إمتحن 
+                                                                </a>
+                                                            </h2>
+                                                            <div id="subCollapse5" class="accordion-collapse collapse" data-bs-parent="#subAccordion">
+                                                                <div class="accordion-body">
+                                                                    امتحان شامل + نموذج إجابة مفصل.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div> <!-- END SUB ACCORDION -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                              
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
                                     <h5>وصف الكورس</h5>
                                     <p>هذا الكورس مصمم خصيصاً لطلاب الصف الأول الثانوي لمراجعة شهر نوفمبر. يغطي الكورس جميع المواد الأساسية مع التركيز على النقاط المهمة والأسئلة المتوقعة في الامتحانات.</p>
                                     <h6>ما ستتعلمه:</h6>
@@ -233,44 +637,6 @@
                                         <li>تقنيات المراجعة الفعالة</li>
                                         <li>إدارة الوقت في الامتحانات</li>
                                     </ul>
-                                </div>
-                                <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
-                                    <h5>محتوى الكورس</h5>
-                                    <div class="accordion" id="curriculumAccordion">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingOne">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    الأسبوع الأول: المراجعة الأساسية
-                                                </button>
-                                            </h2>
-                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#curriculumAccordion">
-                                                <div class="accordion-body">
-                                                    <ul>
-                                                        <li>درس 1: مقدمة في المواد الأساسية</li>
-                                                        <li>درس 2: حل المسائل البسيطة</li>
-                                                        <li>درس 3: تمارين تطبيقية</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingTwo">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    الأسبوع الثاني: التعمق في المواضيع
-                                                </button>
-                                            </h2>
-                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#curriculumAccordion">
-                                                <div class="accordion-body">
-                                                    <ul>
-                                                        <li>درس 4: المواضيع المتقدمة</li>
-                                                        <li>درس 5: حل المسائل المعقدة</li>
-                                                        <li>درس 6: مراجعة شاملة</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Add more weeks as needed -->
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -282,10 +648,10 @@
                     <div class="card sticky-top" style="top: 20px;">
                         <div class="card-body">
                             <div class="text-center mb-3">
-                                <span class="badge bg-success fs-5 p-2">100 جنية</span>
+                                <span class="badge bg-success fs-5 p-2"> انت مشترك في هذا الكورس !</span>
                             </div>
-                            <a href="subscribe.html" class="btn btn-primary w-100 mb-3">الإشتراك في الكورس <i class="fas fa-credit-card"></i></a>
-                            <a href="course-details.html" class="btn btn-outline-primary w-100 mb-3">الدخول للكورس <i class="fas fa-video"></i></a>
+                            <!-- <a href="subscribe.html" class="btn btn-primary w-100 mb-3">الإشتراك في الكورس <i class="fas fa-credit-card"></i></a>
+                            <a href="course-details.html" class="btn btn-outline-primary w-100 mb-3">الدخول للكورس <i class="fas fa-video"></i></a> -->
                             <hr>
                             <h6>تفاصيل الكورس</h6>
                             <ul class="list-unstyled">
@@ -296,13 +662,24 @@
                                 <li><i class="fas fa-mobile-alt me-2"></i>متوافق مع الهواتف</li>
                             </ul>
                             <hr>
-                            <h6>شارك الكورس</h6>
-                            <div class="d-flex justify-content-around socials-share pt-3">
-                                <a href="#" class="text-decoration-none"><i class="fab fa-facebook-f fs-4"></i></a>
-                                <a href="#" class="text-decoration-none"><i class="fab fa-twitter fs-4"></i></a>
-                                <a href="#" class="text-decoration-none"><i class="fab fa-whatsapp fs-4"></i></a>
-                                <a href="#" class="text-decoration-none"><i class="fab fa-linkedin-in fs-4"></i></a>
-                            </div>
+                            <h6>الدروس </h6>
+                            <ul class="list-group list-group-numbered bg-unset border-0 p-0">
+                                <li class="list-group-item bg-unset d-flex border-0 px-0 align-items-center">
+                                   الأسبوع  1
+                                </li>
+                                <li class="list-group-item bg-unset d-flex border-0 px-0 align-items-center">
+                                   الأسبوع  2
+                                </li>
+                                <li class="list-group-item bg-unset d-flex border-0 px-0 align-items-center">
+                                   الأسبوع  3
+                                </li>
+                                <li class="list-group-item bg-unset d-flex border-0 px-0 align-items-center">
+                                   الأسبوع  4
+                                </li>
+                                <li class="list-group-item bg-unset d-flex border-0 px-0 align-items-center">
+                                   الأسبوع  5
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

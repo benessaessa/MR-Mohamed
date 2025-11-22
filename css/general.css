@@ -198,6 +198,25 @@ table .min-vw-30{
 .dark-mode .socials-share a{
     color: var(--bg-color-first) !important;
 }
+.dark-mode .accordion .accordion-button{
+    background-color: var(--bg-color-primary) !important;
+    color: var(--color-white) !important;
+}   
+.dark-mode .accordion .accordion-header{
+    background-color: var(--bg-color-primary) !important;
+    color: var(--color-white) !important;
+}
+.dark-mode .accordion .accordion-body{
+    background-color: var(--bg-color-main) !important;
+    color: var(--color-white) !important;
+}
+.custom-position-btn{
+    right: unset;
+    left: 70px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 999;
+}
 /* ================================ Footer =================== */
 .footer{
     background-color: var(--bg-color-main);
