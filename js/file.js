@@ -172,13 +172,3 @@ new Chart(ctx, {
 const progress = 60; // Example: 60%
 document.querySelector('.progress-fill').style.width = progress + '%';
 document.querySelector('.progress-value').textContent = progress + '%';
-
-function loadVideo() {
-    document.querySelector('.video-container').style.display = "none";
-    document.getElementById("videoPlayer").innerHTML = `
-        <iframe width="100%" height="600"
-            src="https://www.youtube.com/embed/Bzzp0q0T5oM?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-            frameborder="0" allowfullscreen>
-        </iframe>
-    `;
-}
