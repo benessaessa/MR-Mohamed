@@ -173,14 +173,24 @@ const progress = 60; // Example: 60%
 document.querySelector('.progress-fill').style.width = progress + '%';
 document.querySelector('.progress-value').textContent = progress + '%';
 
-let player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('youtube-video');
-}
+let player; // declare globally
 
-function playVideo() {
-  document.querySelector('.video-overlay').style.display = 'none'; // remove overlay
-  if (player) {
-    player.playVideo();
+  // Load YouTube API
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+
+  // Called automatically when API is ready
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-video');
   }
-}
+
+  function playVideo() {
+    if (player && player.playVideo) {
+      document.querySelector('.video-overlay').style.display = 'none';
+      player.playVideo();
+    } else {
+      console.log("Player not ready yet!");
+    }
+  }
+
