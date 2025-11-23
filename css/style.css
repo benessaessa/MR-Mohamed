@@ -401,3 +401,24 @@ input:checked + .switch-label::after {
         padding: 0;
     }
 }
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    cursor: pointer;
+}
+
+.video-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-container .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    opacity: 0.9;
+}

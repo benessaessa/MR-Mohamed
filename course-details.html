@@ -541,21 +541,12 @@
                                                                                 class="btn btn-primary btn-sm">
                                                                             مشاهدة الفيديو
                                                                             </a>
-                                                                            <div class="ratio ratio-16x9">
-                                                                                <iframe
-                                                                                    width="100%"
-                                                                                    height="350px"
-                                                                                    src="https://www.youtube.com/embed/Bzzp0q0T5oM?si=iaR0YKOZAZ8soufG
-                                                                                    &controls=0
-                                                                                    &modestbranding=1
-                                                                                    &rel=0
-                                                                                    &showinfo=0
-                                                                                    &iv_load_policy=3
-                                                                                    &fs=0"
-                                                                                    frameborder="0"
-                                                                                    allowfullscreen>
-                                                                                </iframe>
+                                                                            <div class="video-container" onclick="loadVideo()">
+                                                                                <img src="images/poster.png" alt="poster">
+                                                                                <i class="fa fa-play-circle play-btn"></i>
                                                                             </div>
+
+                                                                            <div id="videoPlayer"></div>
                                                                         </span> 
                                                                     </p>
                                                                 </div>
