@@ -172,3 +172,15 @@ new Chart(ctx, {
 const progress = 60; // Example: 60%
 document.querySelector('.progress-fill').style.width = progress + '%';
 document.querySelector('.progress-value').textContent = progress + '%';
+
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('youtube-video');
+}
+
+function playVideo() {
+  document.querySelector('.video-overlay').style.display = 'none'; // remove overlay
+  if (player) {
+    player.playVideo();
+  }
+}

@@ -275,9 +275,19 @@
                                                                             </a>
                                                                         </span>  -->
                                                                     </p>
-                                                                    <video width="100%" controls poster="images/poster.png" height="300px">
-                                                                        <source src="videos/mov_bbb.mp4" type="video/mp4">
-                                                                    </video>
+                                                                    <div class="video-wrapper">
+                                                                        <!-- Your YouTube iframe -->
+                                                                        <iframe id="youtube-video" width="560" height="315" 
+                                                                            src="https://www.youtube.com/embed/Bzzp0q0T5oM?si=mVI6wQ3ATBkrDDPM"
+                                                                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                                                                        </iframe>
+
+                                                                        <!-- Overlay div -->
+                                                                        <div class="video-overlay" onclick="playVideo()"></div>
+                                                                    </div>
+
+                                                                    <button onclick="playVideo()">Play Video</button>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -821,6 +831,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="js/file.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
     <script>
         AOS.init();
     </script>
