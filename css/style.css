@@ -401,3 +401,26 @@ input:checked + .switch-label::after {
         padding: 0;
     }
 }
+.question-box {
+    background: var(--color-white);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+.question-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.result-box {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: none;
+}
+.dark-mode .question-box {
+    background: var(--color-on-primary);
+    border: 1px solid #555;
+}
