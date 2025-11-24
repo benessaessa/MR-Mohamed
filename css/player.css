@@ -1,0 +1,269 @@
+/* ==================== Video Player ========= */
+#playerWrap {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+#player {
+    margin-top: 4.6rem;
+    width: 100%;
+    height: 100%;
+}
+
+/* ✅ طبقة شفافة تغطي اليوتيوب بالكامل وتمنع الضغط عليه */
+#overlay-blocker {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: transparent;
+    pointer-events: auto;
+}
+
+.controls {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65));
+    backdrop-filter: blur(6px);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: opacity 0.5s ease;
+    color: #fff;
+
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#progress {
+    flex: 1;
+    height: 6px;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    border-radius: 4px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#progress::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 8px var(--accent1);
+}
+
+.time-display {
+    min-width: 56px;
+    text-align: center;
+    color: #fff;
+    opacity: .95;
+    font-size: 13px;
+}
+
+.buttons-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.left-controls,
+.right-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.fabIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--fab-bg);
+    border: 1px solid var(--fab-border);
+    color: #fff;
+    cursor: pointer;
+    transition: transform .12s ease, background .12s ease, box-shadow .12s;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    font-size: 14px;
+}
+
+.fabIcon-circle {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.fabIcon:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+    border-color: var(--accent1);
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.fabIcon svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    fill: none;
+    stroke: var(--accent1);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.fabIcon .label {
+    white-space: nowrap;
+    color: #fff;
+    opacity: .95;
+}
+
+select.pill {
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    padding: 6px 28px 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--fab-border);
+    font-family: "Cairo", sans-serif;
+    cursor: pointer;
+    position: relative;
+}
+
+select.pill::after {
+    content: "▾";
+    position: absolute;
+    right: 8px;
+    pointer-events: none
+}
+
+input[type=range].small {
+    width: 80px
+}
+
+.logod {
+    font-weight: 700;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px
+}
+
+.logod .name1 {
+    color: #3b82f6
+}
+
+.logod .name2 {
+    color: var(--accent1);
+    border: 1px solid var(--accent1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px
+}
+
+@media (max-width:768px) {
+    .fabIcon {
+        padding: 0;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+
+    .fabIcon .label {
+        display: none
+    }
+
+    .fabIcon svg {
+        width: 22px;
+        height: 22px
+    }
+
+    select.pill {
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    input[type=range].small {
+        width: 58px
+    }
+
+    .logo {
+        display: none
+    }
+
+    .progress-container {
+        gap: 8px
+    }
+
+    /* ✅ الأزرار جنب بعض في صف واحد */
+    .buttons-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        /* يمنع النزول لسطر جديد */
+        overflow-x: auto;
+        /* يسمح بالتمرير إذا زادت الأزرار */
+        scrollbar-width: none;
+        /* إخفاء شريط التمرير */
+    }
+
+    .buttons-row::-webkit-scrollbar {
+        display: none;
+    }
+
+    .left-controls,
+    .right-controls {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+}
+
+/* الزر يظهر فقط في الموبايل */
+.mobile-only {
+    display: none;
+}
+
+/* على الموبايل فقط */
+@media (max-width:768px) {
+    #volumeValue {
+        display: none;
+        /* يخفي رقم الصوت */
+    }
+
+    .mobile-only {
+        display: inline-flex;
+        /* يظهر زر التكبير */
+    }
+}
+
+@media (max-width:420px) {
+    .controls {
+        padding: 8px
+    }
+
+    .time-display {
+        font-size: 12px;
+        min-width: 44px
+    }
+}
