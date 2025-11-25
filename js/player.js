@@ -83,29 +83,13 @@
     function toggleFullscreen(){ const elem=document.getElementById('playerWrap'); document.fullscreenElement?document.exitFullscreen():elem.requestFullscreen(); }
     function changeSpeed(){ if(player) player.setPlaybackRate(parseFloat(speedSelect.value)); }
 
-    function loadQualityLevels(){
-      try{
-        const levels = player.getAvailableQualityLevels ? player.getAvailableQualityLevels() : [];
-        qualitySelect.innerHTML = '<option value="">الجودة</option>';
-        if(levels.length){
-          levels.forEach(l=>{
-            const opt=document.createElement('option');
-            opt.value=l; opt.textContent=translateQuality(l);
-            qualitySelect.appendChild(opt);
-          });
-          const cur = player.getPlaybackQuality ? player.getPlaybackQuality() : '';
-          if(cur) qualitySelect.value = cur;
-        }
-      }catch{ setTimeout(loadQualityLevels, 800); }
-    }
 
     function translateQuality(code){
       const map = { small:'240p', medium:'360p', large:'480p', hd720:'720p', hd1080:'1080p', hd1440:'2K', hd2160:'4K', highres:'أعلى جودة' };
       return map[code] || code;
     }
 
-    function changeQuality(){ const q=qualitySelect.value; if(q && player && player.setPlaybackQuality) player.setPlaybackQuality(q); }
-   // منع الكلك اليمين
+  // منع الكلك اليمين
   document.addEventListener('contextmenu', event => event.preventDefault());
 
   // منع استخدام F12 و Ctrl+Shift+I و غيرها
