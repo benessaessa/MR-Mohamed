@@ -22,13 +22,11 @@ function playVideo() {
     <svg viewBox="0 0 24 24">
         <path d="M11 19V5l-8 7 8 7zM21 19V5l-8 7 8 7z"></path>
     </svg>
-    <span class="overlay-label">تقديم +10ث</span>
 </button>
 <button id="rewindOverlay" class="overlay-btn rewind-overlay" onclick="rewind10()" aria-label="الرجوع 10 ث">
     <svg viewBox="0 0 24 24">
         <path d="M13 5v14l8-7-8-7zM3 5v14l8-7-8-7z"></path>
     </svg>
-    <span class="overlay-label">تأخير -10ث</span>
 </button>
 </div>
 <div class="controls" role="region" aria-label="مشغل فيديو">
@@ -53,7 +51,7 @@ function playVideo() {
             </div>
             <div class="setting-item">
                 <label for="speedSelect">السرعة:</label>
-                <select id="speedSelect">
+                <select id="speedSelect" onchange="changeSpeed()">
                     <option value="0.5">0.5x</option>
                     <option value="0.75">0.75x</option>
                     <option value="1" selected>1x</option>
@@ -115,7 +113,7 @@ function onPlayerReady(){
       // Add event listeners after player is ready
       if (progress) progress.addEventListener('input', () => player && player.seekTo(parseFloat(progress.value), true));
       if (volumeBar) volumeBar.addEventListener('input', () => { if(player) player.setVolume(parseFloat(volumeBar.value)); volumeValue.textContent = volumeBar.value + '%'; });
-      if (speedSelect) speedSelect.addEventListener('change', () => changeSpeed());
+      // Speed control uses inline onchange
     }
   }, 1000);
   setTimeout(loadQualityLevels, 1200);
@@ -200,6 +198,7 @@ function toggleFullscreen(){
     }
 }
 function changeSpeed(){
+  const speedSelect = document.getElementById('speedSelect');
   if(player && speedSelect) {
     const speed = parseFloat(speedSelect.value);
     console.log('Changing speed to:', speed);
@@ -294,6 +293,10 @@ function initializePlayerElements() {
 
   console.log('speedSelect found:', speedSelect);
   console.log('speedSelect value:', speedSelect ? speedSelect.value : 'null');
+
+  // Attach event listeners for controls
+  if (volumeBar) volumeBar.addEventListener('input', () => { if(player) player.setVolume(parseFloat(volumeBar.value)); volumeValue.textContent = volumeBar.value + '%'; });
+  // Speed control event listener will be attached when settings dropdown opens
 
   // Listen for fullscreen changes to handle Esc key exit
   document.addEventListener('fullscreenchange', handleFullscreenChange);
