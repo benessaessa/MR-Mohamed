@@ -208,25 +208,38 @@ function changeSpeed(){
 
     // Check if the selected speed is supported
     if(availableRates && availableRates.includes(speed)) {
-      // Ensure player is ready and playing before setting rate
-      if(player.getPlayerState() === YT.PlayerState.PLAYING || player.getPlayerState() === YT.PlayerState.PAUSED) {
-        player.setPlaybackRate(speed);
-        // Verify the speed was set
-        setTimeout(() => {
-          const currentRate = player.getPlaybackRate();
-          console.log('Current playback rate after setting:', currentRate);
-          if(currentRate !== speed) {
-            console.warn('Playback rate not set correctly. Expected:', speed, 'Got:', currentRate);
-            // Try setting again after a longer delay
-            setTimeout(() => {
-              player.setPlaybackRate(speed);
-              console.log('Retried setting playback rate to:', speed);
-            }, 500);
-          }
-        }, 100);
-      } else {
-        console.log('Player not in playing or paused state, cannot set playback rate');
+      const wasPlaying = player.getPlayerState() === YT.PlayerState.PLAYING;
+
+      // Pause the video temporarily to ensure rate change takes effect
+      if(wasPlaying) {
+        player.pauseVideo();
       }
+
+      // Set the playback rate
+      player.setPlaybackRate(speed);
+
+      // Verify the speed was set and resume if needed
+      setTimeout(() => {
+        const currentRate = player.getPlaybackRate();
+        console.log('Current playback rate after setting:', currentRate);
+
+        if(currentRate === speed) {
+          console.log('Playback rate set successfully to:', speed);
+          if(wasPlaying) {
+            player.playVideo();
+          }
+        } else {
+          console.warn('Playback rate not set correctly. Expected:', speed, 'Got:', currentRate);
+          // Try alternative method - set rate after a short delay
+          setTimeout(() => {
+            player.setPlaybackRate(speed);
+            console.log('Retried setting playback rate to:', speed);
+            if(wasPlaying) {
+              player.playVideo();
+            }
+          }, 200);
+        }
+      }, 100);
     } else {
       console.warn('Selected speed', speed, 'is not supported. Available rates:', availableRates);
       // Reset select to current rate
