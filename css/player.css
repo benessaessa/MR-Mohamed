@@ -134,7 +134,7 @@
     height: 20px;
     flex: 0 0 20px;
     fill: none;
-    stroke: var(--accent1);
+    stroke: var(--color-white);
     stroke-width: 1.6;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -373,7 +373,7 @@ input[type=range].small {
     top: 50%;
     transform: translateY(-50%);
     z-index: 15;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     width: 60px;
