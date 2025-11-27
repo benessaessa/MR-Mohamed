@@ -219,6 +219,12 @@ function toggleSettings(){
     dropdown.style.display = 'none';
   } else {
     dropdown.style.display = 'block';
+    // Ensure speed control event listener is attached when dropdown opens
+    if(speedSelect && !speedSelect.hasEventListener) {
+      speedSelect.addEventListener('change', () => changeSpeed());
+      speedSelect.hasEventListener = true; // Mark as attached
+      console.log('Speed control event listener attached');
+    }
   }
 }
 
@@ -285,6 +291,9 @@ function initializePlayerElements() {
   speedSelect = document.getElementById('speedSelect');
   qualitySelect = document.getElementById('qualitySelect');
   controls = document.querySelector('.controls');
+
+  console.log('speedSelect found:', speedSelect);
+  console.log('speedSelect value:', speedSelect ? speedSelect.value : 'null');
 
   // Listen for fullscreen changes to handle Esc key exit
   document.addEventListener('fullscreenchange', handleFullscreenChange);
