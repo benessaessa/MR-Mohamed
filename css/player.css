@@ -149,7 +149,7 @@
 select.pill {
     appearance: none;
     -webkit-appearance: none;
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--bg-color-main);
     color: #fff;
     padding: 6px 28px 6px 10px;
     border-radius: 999px;
@@ -157,6 +157,9 @@ select.pill {
     font-family: "Cairo", sans-serif;
     cursor: pointer;
     position: relative;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    transition: transform .12s ease, background .12s ease, box-shadow .12s;
 }
 
 select.pill::after {

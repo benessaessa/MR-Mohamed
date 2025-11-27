@@ -169,6 +169,6 @@ new Chart(ctx, {
   },
 });
 
-const progress = 60; // Example: 60%
-document.querySelector('.progress-fill').style.width = progress + '%';
-document.querySelector('.progress-value').textContent = progress + '%';
+const progressD = 60; // Example: 60%
+document.querySelector('.progress-fill').style.width = progressD + '%';
+document.querySelector('.progress-value').textContent = progressD + '%';

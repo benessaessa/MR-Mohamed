@@ -55,6 +55,14 @@ function playVideo() {
         </svg>
         <span class="label">صوت</span>
     </button>
+    <select id="speedSelect" class="pill">
+        <option value="0.5">0.5x</option>
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+    </select>
     <button class="fabIcon" onclick="toggleFullscreen()">
         <svg viewBox="0 0 24 24">
             <path d="M7 14H5v5h5v-2H7v-3zM19 5h-5v2h3v3h2V5zM7 5h3V3H5v5h2V5zM19 19v-3h2v5h-5v-2h3z"></path>
@@ -98,6 +106,7 @@ function onPlayerReady(){
       // Add event listeners after player is ready
       if (progress) progress.addEventListener('input', () => player && player.seekTo(parseFloat(progress.value), true));
       if (volumeBar) volumeBar.addEventListener('input', () => { if(player) player.setVolume(parseFloat(volumeBar.value)); volumeValue.textContent = volumeBar.value + '%'; });
+      if (speedSelect) speedSelect.addEventListener('change', () => changeSpeed());
     }
   }, 1000);
   setTimeout(loadQualityLevels, 1200);
