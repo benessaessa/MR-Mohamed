@@ -95,6 +95,9 @@ function onPlayerReady(){
       volumeBar.value = player.getVolume();
       volumeValue.textContent = player.getVolume() + '%';
       updateProgress();
+      // Add event listeners after player is ready
+      if (progress) progress.addEventListener('input', () => player && player.seekTo(parseFloat(progress.value), true));
+      if (volumeBar) volumeBar.addEventListener('input', () => { if(player) player.setVolume(parseFloat(volumeBar.value)); volumeValue.textContent = volumeBar.value + '%'; });
     }
   }, 1000);
   setTimeout(loadQualityLevels, 1200);
@@ -134,7 +137,6 @@ function formatTime(sec){
   return `${m}:${s}`;
 }
 
-progress.addEventListener('input', ()=> player && player.seekTo(parseFloat(progress.value), true));
 function togglePlayPause(){ if(!player)return; const st=player.getPlayerState(); st===YT.PlayerState.PLAYING?player.pauseVideo():player.playVideo(); }
 function rewind10(){ if(player) player.seekTo(Math.max(0, player.getCurrentTime()-10), true); }
 function forward10(){ if(player) player.seekTo(player.getCurrentTime()+10, true); }
@@ -153,8 +155,6 @@ function muteVideo(){
     label.textContent = 'كتم';
   }
 }
-
-volumeBar.addEventListener('input', ()=> { if(player) player.setVolume(volumeBar.value); volumeValue.textContent = volumeBar.value + '%'; });
 function toggleFullscreen(){
     const elem = document.getElementById('playerWrap');
     const controls = document.querySelector('.controls');
@@ -251,10 +251,6 @@ function initializePlayerElements() {
   speedSelect = document.getElementById('speedSelect');
   qualitySelect = document.getElementById('qualitySelect');
   controls = document.querySelector('.controls');
-
-  // Add event listeners after elements are available
-  if (progress) progress.addEventListener('input', () => player && player.seekTo(parseFloat(progress.value), true));
-  if (volumeBar) volumeBar.addEventListener('input', () => { if(player) player.setVolume(volumeBar.value); volumeValue.textContent = volumeBar.value + '%'; });
 
   // Listen for fullscreen changes to handle Esc key exit
   document.addEventListener('fullscreenchange', handleFullscreenChange);
