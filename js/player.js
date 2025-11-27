@@ -202,11 +202,37 @@ function changeSpeed(){
   if(player && speedSelect) {
     const speed = parseFloat(speedSelect.value);
     console.log('Changing speed to:', speed);
-    player.setPlaybackRate(speed);
-    // Verify the speed was set
-    setTimeout(() => {
-      console.log('Current playback rate:', player.getPlaybackRate());
-    }, 100);
+    console.log('Player state:', player.getPlayerState());
+    const availableRates = player.getAvailablePlaybackRates();
+    console.log('Available playback rates:', availableRates);
+
+    // Check if the selected speed is supported
+    if(availableRates && availableRates.includes(speed)) {
+      // Ensure player is ready and playing before setting rate
+      if(player.getPlayerState() === YT.PlayerState.PLAYING || player.getPlayerState() === YT.PlayerState.PAUSED) {
+        player.setPlaybackRate(speed);
+        // Verify the speed was set
+        setTimeout(() => {
+          const currentRate = player.getPlaybackRate();
+          console.log('Current playback rate after setting:', currentRate);
+          if(currentRate !== speed) {
+            console.warn('Playback rate not set correctly. Expected:', speed, 'Got:', currentRate);
+            // Try setting again after a longer delay
+            setTimeout(() => {
+              player.setPlaybackRate(speed);
+              console.log('Retried setting playback rate to:', speed);
+            }, 500);
+          }
+        }, 100);
+      } else {
+        console.log('Player not in playing or paused state, cannot set playback rate');
+      }
+    } else {
+      console.warn('Selected speed', speed, 'is not supported. Available rates:', availableRates);
+      // Reset select to current rate
+      const currentRate = player.getPlaybackRate();
+      speedSelect.value = currentRate.toString();
+    }
   } else {
     console.log('Player or speedSelect not available');
   }
