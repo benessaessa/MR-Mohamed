@@ -1,12 +1,13 @@
 let player;
-const progress = document.getElementById('progress');
-const playPauseBtn = document.getElementById('playPauseBtn');
-const muteBtn = document.getElementById('muteBtn');
-const volumeBar = document.getElementById('volume');
-const volumeValue = document.getElementById('volumeValue');
-const timeDisplay = document.getElementById('timeDisplay');
-const speedSelect = document.getElementById('speedSelect');
-const qualitySelect = document.getElementById('qualitySelect');
+let progress;
+let playPauseBtn;
+let muteBtn;
+let volumeBar;
+let volumeValue;
+let timeDisplay;
+let speedSelect;
+let qualitySelect;
+let originalPlayerSize = {};
 
 function onYouTubeIframeAPIReady(){
   player = new YT.Player('player', {
@@ -25,7 +26,7 @@ function onYouTubeIframeAPIReady(){
 
 function onPlayerReady(){
   player.playVideo();
-  setInterval(updateProgress, 800);
+  initializePlayerElements();
   setTimeout(loadQualityLevels, 1200);
 }
 
@@ -83,14 +84,40 @@ volumeBar.addEventListener('input', ()=> { if(player) player.setVolume(volumeBar
 function toggleFullscreen(){
     const elem = document.getElementById('playerWrap');
     const controls = document.querySelector('.controls');
-    if (document.fullscreenElement) {
-        document.exitFullscreen();
-        controls.classList.remove('fullscreen');
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+        // set back to normal
         elem.classList.remove('fullscreen');
+        controls.classList.remove('fullscreen');
+        elem.style.position = '';
+        elem.style.inset = '';
+        elem.style.zIndex = '';
+        elem.style.borderRadius = '';
+        controls.style.position = '';
+        controls.style.left = '';
+        controls.style.right = '';
+        controls.style.bottom = '';
     } else {
-        elem.requestFullscreen();
-        controls.classList.add('fullscreen');
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+        }
+        // set to fullscreen
         elem.classList.add('fullscreen');
+        controls.classList.add('fullscreen');
+        elem.style.position = 'fixed';
+        elem.style.inset = '0';
+        elem.style.zIndex = '10';
+        elem.style.borderRadius = '0';
+        controls.style.position = 'fixed';
+        controls.style.left = '0';
+        controls.style.right = '0';
+        controls.style.bottom = '0';
     }
 }
 function changeSpeed(){ if(player) player.setPlaybackRate(parseFloat(speedSelect.value)); }
@@ -106,7 +133,28 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 // منع استخدام F12 و Ctrl+Shift+I و غيرها
 document.addEventListener('keydown', function(e) {
-  if (
+  if (e.key === "Escape") {
+    const elem = document.getElementById('playerWrap');
+    const controls = document.querySelector('.controls');
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+    // Always remove fullscreen class and reset styles
+    elem.classList.remove('fullscreen');
+    controls.classList.remove('fullscreen');
+    elem.style.position = '';
+    elem.style.inset = '';
+    elem.style.zIndex = '';
+    elem.style.borderRadius = '';
+    controls.style.position = '';
+    controls.style.left = '';
+    controls.style.right = '';
+    controls.style.bottom = '';
+  } else if (
     e.key === "F12" ||
     (e.ctrlKey && e.shiftKey && e.key === "I") ||
     (e.ctrlKey && e.shiftKey && e.key === "J") ||
@@ -117,18 +165,67 @@ document.addEventListener('keydown', function(e) {
 });
 // ✅ إخفاء الأزرار بعد 5 ثواني من عدم التفاعل
 let hideControlsTimeout;
-const controls = document.querySelector('.controls');
+let controls;
+
+function initializePlayerElements() {
+  progress = document.getElementById('progress');
+  playPauseBtn = document.getElementById('playPauseBtn');
+  muteBtn = document.getElementById('muteBtn');
+  volumeBar = document.getElementById('volume');
+  volumeValue = document.getElementById('volumeValue');
+  timeDisplay = document.getElementById('timeDisplay');
+  speedSelect = document.getElementById('speedSelect');
+  qualitySelect = document.getElementById('qualitySelect');
+  controls = document.querySelector('.controls');
+
+  // Add event listeners after elements are available
+  if (progress) progress.addEventListener('input', () => player && player.seekTo(parseFloat(progress.value), true));
+  if (volumeBar) volumeBar.addEventListener('input', () => { if(player) player.setVolume(volumeBar.value); volumeValue.textContent = volumeBar.value + '%'; });
+
+  // Listen for fullscreen changes to handle Esc key exit
+  document.addEventListener('fullscreenchange', handleFullscreenChange);
+  document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+  // مستمعات الحركة (ماوس أو لمس)
+  document.addEventListener('mousemove', showControls);
+  document.addEventListener('touchstart', showControls);
+
+  // يبدأ المؤقت عند تشغيل الصفحة
+  resetHideTimer();
+}
+
+function handleFullscreenChange() {
+  const elem = document.getElementById('playerWrap');
+  const controls = document.querySelector('.controls');
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+    // Exited fullscreen (e.g., via Esc or browser exit)
+    elem.classList.remove('fullscreen');
+    controls.classList.remove('fullscreen');
+    elem.style.position = 'relative';
+    elem.style.inset = '';
+    elem.style.zIndex = '1';
+    elem.style.borderRadius = 'calc(.25rem - 1px) calc(.25rem - 1px) 0 0';
+    controls.style.position = 'relative';
+    controls.style.left = '';
+    controls.style.right = '';
+    controls.style.bottom = '';
+  }
+}
 
 // دالة لإظهار الأزرار
 function showControls() {
-  controls.style.opacity = '1';
-  controls.style.transition = 'opacity 0.5s ease';
-  resetHideTimer();
+  if (controls) {
+    controls.style.opacity = '1';
+    controls.style.transition = 'opacity 0.5s ease';
+    resetHideTimer();
+  }
 }
 
 // دالة لإخفاء الأزرار
 function hideControls() {
-  controls.style.opacity = '0';
+  if (controls) {
+    controls.style.opacity = '0';
+  }
 }
 
 // إعادة ضبط المؤقت كل مرة يتحرك فيها الماوس أو يلمس المستخدم الشاشة
@@ -136,10 +233,3 @@ function resetHideTimer() {
   clearTimeout(hideControlsTimeout);
   hideControlsTimeout = setTimeout(hideControls, 5000);
 }
-
-// مستمعات الحركة (ماوس أو لمس)
-document.addEventListener('mousemove', showControls);
-document.addEventListener('touchstart', showControls);
-
-// يبدأ المؤقت عند تشغيل الصفحة
-resetHideTimer();

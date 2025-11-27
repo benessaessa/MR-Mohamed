@@ -1,6 +1,6 @@
 /* ==================== Video Player ========= */
 #playerWrap {
-    position: relative;
+    position: relative !important;
     width: 100%;
     aspect-ratio: 16 / 9;
     z-index: 1;
@@ -29,7 +29,7 @@
 }
 
 .controls {
-    position: relative;
+    position: relative !important;
     padding: 12px;
     box-sizing: border-box;
     background: var(--bg-color-main);
