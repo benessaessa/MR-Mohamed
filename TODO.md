@@ -1,0 +1,3 @@
+- [x] Replace the course image with a video element in course-details.html
+- [x] Update the "مشاهدة الفيديو" buttons to play the video inline instead of linking to player.html
+- [x] Add JavaScript to handle video playback

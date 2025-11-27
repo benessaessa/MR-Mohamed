@@ -80,7 +80,19 @@
     }
 
     volumeBar.addEventListener('input', ()=> { if(player) player.setVolume(volumeBar.value); volumeValue.textContent = volumeBar.value + '%'; });
-    function toggleFullscreen(){ const elem=document.getElementById('playerWrap'); document.fullscreenElement?document.exitFullscreen():elem.requestFullscreen(); }
+    function toggleFullscreen(){
+        const elem = document.getElementById('playerWrap');
+        const controls = document.querySelector('.controls');
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+            controls.classList.remove('fullscreen');
+            elem.classList.remove('fullscreen');
+        } else {
+            elem.requestFullscreen();
+            controls.classList.add('fullscreen');
+            elem.classList.add('fullscreen');
+        }
+    }
     function changeSpeed(){ if(player) player.setPlaybackRate(parseFloat(speedSelect.value)); }
 
 

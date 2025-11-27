@@ -1,14 +1,22 @@
 /* ==================== Video Player ========= */
 #playerWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    z-index: 1;
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+#playerWrap.fullscreen {
     position: fixed;
     inset: 0;
-    z-index: 1;
+    z-index: 10;
+    border-radius: 0;
 }
 
 #player {
-    margin-top: 4.6rem;
     width: 100%;
-    height: 90%;
+    height: 100%;
 }
 
 /* ✅ طبقة شفافة تغطي اليوتيوب بالكامل وتمنع الضغط عليه */
@@ -21,10 +29,7 @@
 }
 
 .controls {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: relative;
     padding: 12px;
     box-sizing: border-box;
     background: var(--bg-color-main);
@@ -36,6 +41,13 @@
     transition: opacity 0.5s ease;
     color: #fff;
 
+}
+
+.controls.fullscreen {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .progress-container {
