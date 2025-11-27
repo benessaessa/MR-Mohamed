@@ -237,6 +237,14 @@ document.addEventListener('click', function(event) {
 });
 
 
+function loadQualityLevels(){
+  if(player && player.getAvailableQualityLevels){
+    const levels = player.getAvailableQualityLevels();
+    console.log('Available quality levels:', levels);
+    // You can add code here to populate a quality select dropdown if needed
+  }
+}
+
 function translateQuality(code){
   const map = { small:'240p', medium:'360p', large:'480p', hd720:'720p', hd1080:'1080p', hd1440:'2K', hd2160:'4K', highres:'أعلى جودة' };
   return map[code] || code;
