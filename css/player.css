@@ -197,6 +197,7 @@ input[type=range].small {
 @media (max-width:768px) {
     .fabIcon {
         padding: 0;
+        min-width: 48px;
         width: 48px;
         height: 48px;
         border-radius: 50%;
