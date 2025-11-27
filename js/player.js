@@ -1,7 +1,6 @@
 let player;
 let progress;
 let playPauseBtn;
-let muteBtn;
 let volumeBar;
 let volumeValue;
 let timeDisplay;
@@ -19,6 +18,18 @@ function playVideo() {
 <div id="playerWrap">
 <div id="player"></div>
 <div id="overlay-blocker"></div>
+<button id="rewindOverlay" class="overlay-btn rewind-overlay" onclick="rewind10()" aria-label="الرجوع 10 ث">
+    <svg viewBox="0 0 24 24">
+        <path d="M13 5v14l8-7-8-7zM3 5v14l8-7-8-7z"></path>
+    </svg>
+    <span class="overlay-label">تأخير -10ث</span>
+</button>
+<button id="forwardOverlay" class="overlay-btn forward-overlay" onclick="forward10()" aria-label="التقديم 10 ث">
+    <svg viewBox="0 0 24 24">
+        <path d="M11 19V5l-8 7 8 7zM21 19V5l-8 7 8 7z"></path>
+    </svg>
+    <span class="overlay-label">تقديم +10ث</span>
+</button>
 </div>
 <div class="controls" role="region" aria-label="مشغل فيديو">
 <div class="progress-container">
@@ -27,18 +38,32 @@ function playVideo() {
 </div>
 <div class="buttons-row">
 <div class="left-controls">
-    <button class="fabIcon" aria-label="الرجوع 10 ث" onclick="rewind10()">
-        <svg viewBox="0 0 24 24">
-            <path d="M13 5v14l8-7-8-7zM3 5v14l8-7-8-7z"></path>
-        </svg>
-        <span class="label"> تأخير -10ث</span>
-    </button>
-    <button class="fabIcon" aria-label="التقديم 10 ث" onclick="forward10()">
-        <svg viewBox="0 0 24 24">
-            <path d="M11 19V5l-8 7 8 7zM21 19V5l-8 7 8 7z"></path>
-        </svg>
-        <span class="label"> تقديم +10ث</span>
-    </button>
+<div class="settings-container">
+        <button id="settingsBtn" class="fabIcon" onclick="toggleSettings()">
+            <svg viewBox="0 0 24 24">
+                <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.82,11.69,4.82,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.43-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"></path>
+            </svg>
+            <span class="label">إعدادات</span>
+        </button>
+        <div id="settingsDropdown" class="settings-dropdown">
+            <div class="setting-item">
+                <label for="volume">الصوت:</label>
+                <input id="volume" type="range" min="0" max="100" value="100">
+                <span id="volumeValue" class="label">100%</span>
+            </div>
+            <div class="setting-item">
+                <label for="speedSelect">السرعة:</label>
+                <select id="speedSelect">
+                    <option value="0.5">0.5x</option>
+                    <option value="0.75">0.75x</option>
+                    <option value="1" selected>1x</option>
+                    <option value="1.25">1.25x</option>
+                    <option value="1.5">1.5x</option>
+                    <option value="2">2x</option>
+                </select>
+            </div>
+        </div>
+    </div>
 </div>
 <button id="playPauseBtn" class="fabIcon" aria-label="تشغيل / إيقاف" onclick="togglePlayPause()">
     <svg viewBox="0 0 24 24" class="icon-play">
@@ -47,22 +72,6 @@ function playVideo() {
     <span class="label">  تشغيل الفيديو </span>
 </button>
 <div class="right-controls">
-    <input id="volume" class="small" type="range" min="0" max="100" value="100">
-    <span id="volumeValue" class="label">100%</span>
-    <button id="muteBtn" class="fabIcon" onclick="muteVideo()">
-        <svg viewBox="0 0 24 24" id="muteIcon">
-            <path d="M5 10v4h4l5 5V5l-5 5H5z"></path>
-        </svg>
-        <span class="label">صوت</span>
-    </button>
-    <select id="speedSelect" class="pill">
-        <option value="0.5">0.5x</option>
-        <option value="0.75">0.75x</option>
-        <option value="1" selected>1x</option>
-        <option value="1.25">1.25x</option>
-        <option value="1.5">1.5x</option>
-        <option value="2">2x</option>
-    </select>
     <button class="fabIcon" onclick="toggleFullscreen()">
         <svg viewBox="0 0 24 24">
             <path d="M7 14H5v5h5v-2H7v-3zM19 5h-5v2h3v3h2V5zM7 5h3V3H5v5h2V5zM19 19v-3h2v5h-5v-2h3z"></path>
@@ -150,20 +159,7 @@ function togglePlayPause(){ if(!player)return; const st=player.getPlayerState();
 function rewind10(){ if(player) player.seekTo(Math.max(0, player.getCurrentTime()-10), true); }
 function forward10(){ if(player) player.seekTo(player.getCurrentTime()+10, true); }
 
-function muteVideo(){
-  if(!player) return;
-  const icon = muteBtn.querySelector('svg');
-  const label = muteBtn.querySelector('.label');
-  if(player.isMuted()){
-    player.unMute();
-    icon.innerHTML = '<path d="M5 10v4h4l5 5V5l-5 5H5z"></path>';
-    label.textContent = 'صوت';
-  } else {
-    player.mute();
-    icon.innerHTML = '<path d="M16.5 12c0-1.77-.77-3.37-2-4.47l1.41-1.41C18.09 7.62 19 9.71 19 12s-.91 4.38-2.09 5.88l-1.41-1.41c1.23-1.1 2-2.7 2-4.47zM5 10v4h4l5 5V5l-5 5H5z"></path>';
-    label.textContent = 'كتم';
-  }
-}
+
 function toggleFullscreen(){
     const elem = document.getElementById('playerWrap');
     const controls = document.querySelector('.controls');
@@ -204,6 +200,24 @@ function toggleFullscreen(){
     }
 }
 function changeSpeed(){ if(player) player.setPlaybackRate(parseFloat(speedSelect.value)); }
+
+function toggleSettings(){
+  const dropdown = document.getElementById('settingsDropdown');
+  if(dropdown.style.display === 'block'){
+    dropdown.style.display = 'none';
+  } else {
+    dropdown.style.display = 'block';
+  }
+}
+
+// Close settings dropdown when clicking outside
+document.addEventListener('click', function(event) {
+  const settingsBtn = document.getElementById('settingsBtn');
+  const dropdown = document.getElementById('settingsDropdown');
+  if (settingsBtn && dropdown && !settingsBtn.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.style.display = 'none';
+  }
+});
 
 
 function translateQuality(code){
@@ -253,7 +267,6 @@ let controls;
 function initializePlayerElements() {
   progress = document.getElementById('progress');
   playPauseBtn = document.getElementById('playPauseBtn');
-  muteBtn = document.getElementById('muteBtn');
   volumeBar = document.getElementById('volume');
   volumeValue = document.getElementById('volumeValue');
   timeDisplay = document.getElementById('timeDisplay');
