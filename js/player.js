@@ -18,17 +18,17 @@ function playVideo() {
 <div id="playerWrap">
 <div id="player"></div>
 <div id="overlay-blocker"></div>
-<button id="rewindOverlay" class="overlay-btn rewind-overlay" onclick="rewind10()" aria-label="الرجوع 10 ث">
-    <svg viewBox="0 0 24 24">
-        <path d="M13 5v14l8-7-8-7zM3 5v14l8-7-8-7z"></path>
-    </svg>
-    <span class="overlay-label">تأخير -10ث</span>
-</button>
 <button id="forwardOverlay" class="overlay-btn forward-overlay" onclick="forward10()" aria-label="التقديم 10 ث">
     <svg viewBox="0 0 24 24">
         <path d="M11 19V5l-8 7 8 7zM21 19V5l-8 7 8 7z"></path>
     </svg>
     <span class="overlay-label">تقديم +10ث</span>
+</button>
+<button id="rewindOverlay" class="overlay-btn rewind-overlay" onclick="rewind10()" aria-label="الرجوع 10 ث">
+    <svg viewBox="0 0 24 24">
+        <path d="M13 5v14l8-7-8-7zM3 5v14l8-7-8-7z"></path>
+    </svg>
+    <span class="overlay-label">تأخير -10ث</span>
 </button>
 </div>
 <div class="controls" role="region" aria-label="مشغل فيديو">
@@ -199,7 +199,19 @@ function toggleFullscreen(){
         controls.style.bottom = '0';
     }
 }
-function changeSpeed(){ if(player) player.setPlaybackRate(parseFloat(speedSelect.value)); }
+function changeSpeed(){
+  if(player && speedSelect) {
+    const speed = parseFloat(speedSelect.value);
+    console.log('Changing speed to:', speed);
+    player.setPlaybackRate(speed);
+    // Verify the speed was set
+    setTimeout(() => {
+      console.log('Current playback rate:', player.getPlaybackRate());
+    }, 100);
+  } else {
+    console.log('Player or speedSelect not available');
+  }
+}
 
 function toggleSettings(){
   const dropdown = document.getElementById('settingsDropdown');

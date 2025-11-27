@@ -413,11 +413,11 @@ input[type=range].small {
     opacity: 0.9;
 }
 
-.rewind-overlay {
+.forward-overlay {
     left: 20px;
 }
 
-.forward-overlay {
+.rewind-overlay {
     right: 20px;
 }
 
