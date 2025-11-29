@@ -82,6 +82,34 @@ let timer;
 let timeLeft = 30 * 60; // 30 minutes in seconds
 let examStarted = false;
 
+// Save and load exam state functions
+function saveExamState() {
+    const examState = {
+        currentQuestionIndex,
+        userAnswers,
+        timeLeft,
+        examStarted
+    };
+    localStorage.setItem('examState_' + lessonName, JSON.stringify(examState));
+}
+
+function loadExamState() {
+    const savedState = localStorage.getItem('examState_' + lessonName);
+    if (savedState) {
+        const state = JSON.parse(savedState);
+        currentQuestionIndex = state.currentQuestionIndex;
+        userAnswers = state.userAnswers;
+        timeLeft = state.timeLeft;
+        examStarted = state.examStarted;
+        return true;
+    }
+    return false;
+}
+
+function clearExamState() {
+    localStorage.removeItem('examState_' + lessonName);
+}
+
 // If lesson not found
 if (!examData) {
     document.getElementById("exam-container").innerHTML = `
@@ -98,6 +126,8 @@ if (!examData) {
 
 function showExamInstructions() {
     const container = document.getElementById('exam-container');
+    const hasSavedState = loadExamState();
+
     container.innerHTML = `
         <div class="exam-instructions-card">
             <div class="instructions-header">
@@ -140,21 +170,49 @@ function showExamInstructions() {
                         <li><i class="fas fa-chart-bar"></i> النتيجة ستظهر فوراً بعد الانتهاء</li>
                     </ul>
                 </div>
+                ${hasSavedState ? `
+                <div class="saved-exam-notice">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> لديك امتحان محفوظ سابقاً. يمكنك الاستمرار من حيث توقفت أو البدء من جديد.
+                    </div>
+                </div>
+                ` : ''}
             </div>
             <div class="instructions-footer">
+                ${hasSavedState ? `
+                <button class="btn btn-success btn-lg me-2" onclick="resumeExam()">
+                    <i class="fas fa-play"></i> استمر في الامتحان
+                </button>
+                <button class="btn btn-primary btn-lg" onclick="startExam()">
+                    <i class="fas fa-redo"></i> ابدأ من جديد
+                </button>
+                ` : `
                 <button class="btn btn-primary btn-lg" onclick="startExam()">
                     <i class="fas fa-play"></i> ابدأ الامتحان
                 </button>
+                `}
             </div>
         </div>
     `;
 }
 
 function startExam() {
+    clearExamState(); // Clear any saved state when starting new
     examStarted = true;
     userAnswers = new Array(examData.length).fill(null);
     startTimer();
     showQuestion(0);
+}
+
+function resumeExam() {
+    if (loadExamState()) {
+        if (examStarted) {
+            startTimer();
+            showQuestion(currentQuestionIndex);
+        } else {
+            showExamInstructions();
+        }
+    }
 }
 
 function startTimer() {
@@ -217,6 +275,11 @@ function showQuestion(index) {
                                 `).join('')}
                             </div>
                         </div>
+                    </div>
+                    <div class="question-actions mb-3">
+                        <button class="btn btn-warning" onclick="endExam()">
+                            <i class="fas fa-pause"></i> إنهاء الامتحان واستمرار لاحقاً
+                        </button>
                     </div>
                     <div class="question-content">
                         <h5 class="question-text">${question.question}</h5>
@@ -394,6 +457,12 @@ function showResults(correct, wrong, grade, percentage) {
 function retakeExam() {
     timeLeft = 30 * 60; // Reset timer
     startExam();
+}
+
+function endExam() {
+    clearInterval(timer);
+    saveExamState();
+    window.location.href = 'my-courses.html';
 }
 
 function goToCourses() {

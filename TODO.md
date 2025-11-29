@@ -1,9 +1,4 @@
-- [x] Replace the course image with a video element in course-details.html
-- [x] Update the "مشاهدة الفيديو" buttons to play the video inline instead of linking to player.html
-- [x] Add JavaScript to handle video playback
-- [x] Fix video player progress bar not updating in real-time
-- [x] Sync volume bar with player's initial volume
-- [x] Fix forward and backward controls and update progress after seeking
-- [x] Ensure progress bar max is set dynamically
-- [x] Fix volume increase/decrease functionality
-- [x] Fix progress-container and timeDisplay layout issues
+- [ ] Add saveExamState() and loadExamState() functions
+- [ ] Modify showExamInstructions() to check for saved state and show resume option
+- [ ] Add "End Exam and Continue Later" button in showQuestion() before question-content
+- [ ] Add endExam() function to save state and redirect to my-courses.html
