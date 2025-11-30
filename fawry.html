@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>تفاصيل الكورس</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- aos library and animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex" href="dashboard.html">
+                <img src="images/logo.png" class="navbar-img" alt="">
+                <div class="d-lg-none d-flex align-items-center ms-3">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <label for="darkModeToggle" class="switch-label">
+                            <span class="icon sun"><i class="fas fa-sun"></i></span>
+                            <span class="icon moon"><i class="fas fa-moon"></i></span>
+                        </label>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Dark mode toggle -->
+                <div class="d-lg-flex d-none align-items-center ms-3">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <label for="darkModeToggle" class="switch-label">
+                            <span class="icon sun"><i class="fas fa-sun"></i></span>
+                            <span class="icon moon"><i class="fas fa-moon"></i></span>
+                        </label>
+                    </div>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 align-items-lg-center align-items-start pt-3 pt-lg-0">
+                    <!-- Notifications dropdown -->
+                    <div class="d-lg-none d-block">
+                        <li class="nav-item mb-3">
+                            <a href="dashboard.html" title="الرئيسية" class="nav-link">
+                                <i class="fas fa-home me-2"></i>
+                                <span> الرئيسية</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="my-courses.html" title="كورساتي" class="nav-link">
+                                <i class="fas fa-graduation-cap me-2"></i>
+                                <span>كورساتي</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="courses.html" title="جميع الكورسات" class="nav-link">
+                                <i class="fas fa-book me-2"></i>
+                                <span>جميع الكورسات</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="requests-courses.html" title="كورساتنا المقترحة" class="nav-link">
+                                <i class="fas fa-edit me-2"></i>
+                                <span>كورساتنا المقترحة</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a href="forum.html" title="المنتدي" class="nav-link">
+                                <i class="fas fa-comments me-2"></i>
+                                <span> المنتدي </span>
+                            </a>
+                        </li>
+                    </div>
+                    <a href="profile.html" class="text-decoration-none">
+                        <li class="custom-badge d-flex align-items-center">
+                            <span class="ms-2">0 جنيه</span>
+                            <div class="icon-circle">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                        </li>
+                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link position-relative" href="#" id="notificationsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+                            <i class="fas fa-bell fs-3"></i>
+                            <!-- <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger">3</span> -->
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationsDropdown">
+                            <li>
+                                <h6 class="dropdown-header">الإشعارات</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#">رسالة جديدة من المعلم</a></li>
+                            <li><a class="dropdown-item" href="#">تم إضافة درس جديد</a></li>
+                            <li><a class="dropdown-item" href="#">تذكير بدفع المحفظة</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-center" href="notifications.html">عرض كل الإشعارات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Profile dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center" href="#" id="profileDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-label="الملف الشخصي">
+                            <i class="fa fa-user-circle fs-3"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>الملف
+                                    الشخصي</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="logout.html"><i
+                                        class="fas fa-sign-out-alt me-2"></i>تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <nav class="sidebar shadow-sm fixed-top pt-5" id="sidebar">
+        <div class="pt-4">
+            <!-- Toggle Button -->
+            <button id="toggleSidebar" class="btn ms-3 me-3 mb-3 mt-3 z-3 p-2 d-flex align-items-center"
+                aria-label="Toggle sidebar">
+                <!-- left icon (hidden by default) -->
+                <i class="d-none" id="toggleIconLeft" aria-hidden="true"></i>
+                <span class="sidebar-text">تصغير القائمة</span>
+                <!-- right/expand icons -->
+                <i class="fas fa-angle-double-right ms-2" id="toggleIconRight" aria-hidden="true"></i>
+                <i class="fas fa-angle-double-left ms-2 d-none" id="toggleIconBothLeft" aria-hidden="true"></i>
+            </button>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-3">
+                    <a href="dashboard.html" title="الرئيسية" class="nav-link text-dark">
+                        <i class="fas fa-home me-2"></i>
+                        <span> الرئيسية</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="my-courses.html" title="كورساتي" class="nav-link text-dark">
+                        <i class="fas fa-graduation-cap me-2"></i>
+                        <span>كورساتي</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="courses.html" title="جميع الكورسات" class="nav-link text-dark">
+                        <i class="fas fa-book me-2"></i>
+                        <span>جميع الكورسات</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="requests-courses.html" title="كورساتنا المقترحة" class="nav-link text-dark">
+                        <i class="fas fa-edit me-2"></i>
+                        <span>كورساتنا المقترحة</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="forum.html" title="المنتدي" class="nav-link text-dark">
+                        <i class="fas fa-comments me-2"></i>
+                        <span> المنتدي </span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="profile.html" title="الملف الشخصي" class="nav-link text-dark">
+                        <i class="fas fa-user me-2"></i>
+                        <span>الملف الشخصي</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- End Navbar -->
+        <div class="container mt-5 pt-4">
+            <div class="row">
+                <!-- Course Image and Basic Info -->
+                <div class="col-lg-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <!-- Bill Details -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card border-danger">
+                                        <div class="card-header bg-danger text-white">
+                                            <h5 class="mb-0"><i class="fas fa-file-invoice-dollar me-2"></i>تفاصيل الفاتورة - غير مدفوعة بعد</h5>
+                                        </div>
+                                        <div class="card-body pb-0">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <strong>رقم الفاتورة:</strong> #INV-2025-001
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <strong>تاريخ الإصدار:</strong> 15 ديسمبر 2024
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <strong>تاريخ الاستحقاق:</strong> 20 ديسمبر 2024
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <strong>الحالة:</strong> <span class="badge bg-danger">غير مدفوع</span>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            
+                                            <h6>تفاصيل الدفع</h6>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th>الوصف</th>
+                                                            <th>الكمية</th>
+                                                            <th>سعر الوحدة</th>
+                                                            <th>الإجمالي</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>مراجعة شهر نوفمبر اولي ثانوي - تسجيل الكورس</td>
+                                                            <td>1</td>
+                                                            <td>100 جنية</td>
+                                                            <td>100 جنية</td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot class="table-light">
+                                                        <tr>
+                                                            <th colspan="3" class="text-end">المبلغ الإجمالي المستحق:</th>
+                                                            <th>100 جنية</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fawry Payment Details -->
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header bg-warning text-white">
+                                            <h5 class="mb-0"><img src="images/fawry.png" alt="Fawry">  الدفع بواسطة فوري
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-title">بيانات الدفع للكورس</h6>
+                                            <form id="fawryPaymentForm">
+                                                <div class="mb-3 col-4">
+                                                    <label for="courseAmount" class="form-label">أدخل المبلغ
+                                                        (جنية)</label>
+                                                    <input type="text" class="form-control text-start" id="courseAmount"
+                                                        placeholder="100" min="1" required>
+                                                </div>
+                                                <div class="pt-3">
+                                                    <button type="submit" class="btn btn-warning px-5 py-3">
+                                                        <i class="fas fa-credit-card me-2"></i>ادفع الآن
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer p-4">
+        <div class="container-fluid pt-4">
+            <div class="row justify-content-between">
+                <div class="col-lg-6 col-md-6"><img src="images/logo.png" alt="img" height="65px">
+                    <p class="pt-4 smallText">
+                        منصة تعليمية تهدف الي تعليم الطلاب بأحدث الطرق الحديثة وابسطها
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-5">
+                    <p class="smallText mb-2">تواصل معنا من خلال</p>
+                    <p class="socials">
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-facebook-square"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-whatsapp"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-youtube-square"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-instagram"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="row border-top mt-4 linkFooter border-secondary justify-content-between text-start">
+                <div class="col-lg-6 col-md-5">
+                    <p class="pt-3 d-none d-md-block">جميع الحقوق محفوظة &copy;
+                        <a href="https://www.facebook.com/mohamed.essa.abdelhamead/">Mohamed Essa</a>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-md-6 pt-3">
+                    <div class="d-flex justify-content-end">
+                        <div>
+                            <a class="text-decoration-none px-2" href="/privacy-policy">الخصوصية</a>
+                            <a class="text-decoration-none px-2" href="/terms">الشروط والأحكام</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/file.js"></script>
+    <script>
+        AOS.init();
+
+        // Update price and total when course amount changes
+        document.getElementById('courseAmount').addEventListener('input', function () {
+            const amount = parseFloat(this.value) || 0;
+            document.getElementById('priceDisplay').textContent = amount + ' جنية';
+            document.getElementById('totalDisplay').textContent = amount + ' جنية';
+        });
+
+        // Handle form submission
+        document.getElementById('fawryPaymentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const amount = document.getElementById('courseAmount').value;
+            if (amount && amount > 0) {
+                alert('Payment initiated for ' + amount + ' جنية via Fawry.');
+                // Here you can add actual payment integration logic
+            } else {
+                alert('Please enter a valid course amount.');
+            }
+        });
+    </script>
+</body>
+
+</html>
