@@ -28,7 +28,6 @@ function playVideo() {
         <path d="M13 5v14l8-7-8-7zM3 5v14l8-7-8-7z"></path>
     </svg>
 </button>
-</div>
 <div class="controls" role="region" aria-label="مشغل فيديو">
 <div class="progress-container">
 <input id="progress" type="range" min="0" value="0" aria-label="شريط التقدم">
@@ -178,6 +177,8 @@ function toggleFullscreen(){
         controls.style.left = '';
         controls.style.right = '';
         controls.style.bottom = '';
+        // Show navbar and sidebar
+        document.querySelectorAll('nav').forEach(nav => nav.style.display = '');
     } else {
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
@@ -191,10 +192,15 @@ function toggleFullscreen(){
         elem.style.inset = '0';
         elem.style.zIndex = '10';
         elem.style.borderRadius = '0';
-        controls.style.position = 'fixed';
+        controls.style.position = 'absolute';
         controls.style.left = '0';
         controls.style.right = '0';
         controls.style.bottom = '0';
+        // Hide navbar and sidebar to prevent overlay
+        document.querySelectorAll('nav').forEach(nav => nav.style.display = 'none');
+        // Ensure controls are visible in fullscreen
+        showControls();
+        clearTimeout(hideControlsTimeout);
     }
 }
 function changeSpeed(){
@@ -372,27 +378,37 @@ function handleFullscreenChange() {
     controls.style.left = '';
     controls.style.right = '';
     controls.style.bottom = '';
+  } else {
+    // Entered fullscreen
+    showControls();
+    clearTimeout(hideControlsTimeout);
   }
 }
 
 // دالة لإظهار الأزرار
 function showControls() {
+  console.log('showControls called, controls:', controls);
   if (controls) {
     controls.style.opacity = '1';
     controls.style.transition = 'opacity 0.5s ease';
+    console.log('Controls opacity set to 1');
     resetHideTimer();
   }
 }
 
 // دالة لإخفاء الأزرار
 function hideControls() {
+  console.log('hideControls called, controls:', controls);
   if (controls) {
     controls.style.opacity = '0';
+    console.log('Controls opacity set to 0');
   }
 }
 
 // إعادة ضبط المؤقت كل مرة يتحرك فيها الماوس أو يلمس المستخدم الشاشة
 function resetHideTimer() {
   clearTimeout(hideControlsTimeout);
+  // Don't hide controls in fullscreen mode
+  if (document.fullscreenElement || document.webkitFullscreenElement) return;
   hideControlsTimeout = setTimeout(hideControls, 5000);
 }

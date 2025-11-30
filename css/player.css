@@ -29,7 +29,10 @@
 }
 
 .controls {
-    position: relative !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 12px;
     box-sizing: border-box;
     background: var(--bg-color-main);
@@ -40,14 +43,16 @@
     gap: 10px;
     transition: opacity 0.5s ease;
     color: #fff;
+    opacity: 0;
 
 }
 
 .controls.fullscreen {
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
+    opacity: 1 !important;
 }
 
 .progress-container {
