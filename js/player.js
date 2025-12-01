@@ -160,6 +160,7 @@ function forward10(){ if(player) player.seekTo(player.getCurrentTime()+10, true)
 function toggleFullscreen(){
     const elem = document.getElementById('playerWrap');
     const controls = document.querySelector('.controls');
+    const fullscreenBtn = document.querySelector('.right-controls .fabIcon:last-child');
     if (document.fullscreenElement || document.webkitFullscreenElement) {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -177,6 +178,13 @@ function toggleFullscreen(){
         controls.style.left = '';
         controls.style.right = '';
         controls.style.bottom = '';
+        // Update button text
+        if (fullscreenBtn) {
+            const label = fullscreenBtn.querySelector('.label');
+            if (label) label.textContent = 'تكبير الشاشة';
+        }
+        // Hide controls when exiting fullscreen
+        // hideControls();
         // Show navbar and sidebar
         document.querySelectorAll('nav').forEach(nav => nav.style.display = '');
     } else {
@@ -196,6 +204,11 @@ function toggleFullscreen(){
         controls.style.left = '0';
         controls.style.right = '0';
         controls.style.bottom = '0';
+        // Update button text
+        if (fullscreenBtn) {
+            const label = fullscreenBtn.querySelector('.label');
+            if (label) label.textContent = 'تصغير الشاشة';
+        }
         // Hide navbar and sidebar to prevent overlay
         document.querySelectorAll('nav').forEach(nav => nav.style.display = 'none');
         // Ensure controls are visible in fullscreen
@@ -343,6 +356,7 @@ function initializePlayerElements() {
   speedSelect = document.getElementById('speedSelect');
   qualitySelect = document.getElementById('qualitySelect');
   controls = document.querySelector('.controls');
+  controls.style.opacity = '0'; // Hide controls initially
 
   console.log('speedSelect found:', speedSelect);
   console.log('speedSelect value:', speedSelect ? speedSelect.value : 'null');
@@ -355,12 +369,27 @@ function initializePlayerElements() {
   document.addEventListener('fullscreenchange', handleFullscreenChange);
   document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
 
-  // مستمعات الحركة (ماوس أو لمس)
-  document.addEventListener('mousemove', showControls);
-  document.addEventListener('touchstart', showControls);
+  // مستمعات الحركة (ماوس أو لمس) on playerWrap
+  const playerWrap = document.getElementById('playerWrap');
+  playerWrap.addEventListener('mouseenter', showControls);
+  playerWrap.addEventListener('touchstart', showControls);
+  playerWrap.addEventListener('click', showControls);
+  playerWrap.addEventListener('mouseleave', resetHideTimer);
 
-  // يبدأ المؤقت عند تشغيل الصفحة
-  resetHideTimer();
+  // Add events to iframe as well for better hover detection
+  setTimeout(() => {
+    if (player && player.getIframe) {
+      const iframe = player.getIframe();
+      iframe.addEventListener('mouseenter', showControls);
+      iframe.addEventListener('touchstart', showControls);
+      iframe.addEventListener('click', showControls);
+      iframe.addEventListener('mouseleave', resetHideTimer);
+    }
+  }, 1000);
+
+  // Prevent hiding when hovering over controls
+  controls.addEventListener('mouseenter', () => clearTimeout(hideControlsTimeout));
+  controls.addEventListener('mouseleave', resetHideTimer);
 }
 
 function handleFullscreenChange() {
@@ -378,10 +407,13 @@ function handleFullscreenChange() {
     controls.style.left = '';
     controls.style.right = '';
     controls.style.bottom = '';
+    // Hide controls in normal mode
+    hideControls();
   } else {
     // Entered fullscreen
     showControls();
     clearTimeout(hideControlsTimeout);
+    resetHideTimer();
   }
 }
 
@@ -392,7 +424,9 @@ function showControls() {
     controls.style.opacity = '1';
     controls.style.transition = 'opacity 0.5s ease';
     console.log('Controls opacity set to 1');
-    resetHideTimer();
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+      resetHideTimer();
+    }
   }
 }
 
@@ -400,15 +434,15 @@ function showControls() {
 function hideControls() {
   console.log('hideControls called, controls:', controls);
   if (controls) {
-    controls.style.opacity = '0';
-    console.log('Controls opacity set to 0');
+    controls.style.removeProperty('opacity');
+    console.log('Controls opacity removed, back to CSS default');
   }
 }
 
 // إعادة ضبط المؤقت كل مرة يتحرك فيها الماوس أو يلمس المستخدم الشاشة
 function resetHideTimer() {
   clearTimeout(hideControlsTimeout);
-  // Don't hide controls in fullscreen mode
-  if (document.fullscreenElement || document.webkitFullscreenElement) return;
-  hideControlsTimeout = setTimeout(hideControls, 5000);
+  // Hide controls after delay in both modes
+  const delay = (document.fullscreenElement || document.webkitFullscreenElement) ? 5000 : 2000;
+  hideControlsTimeout = setTimeout(hideControls, delay);
 }

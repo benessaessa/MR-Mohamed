@@ -5,6 +5,7 @@
     aspect-ratio: 16 / 9;
     z-index: 1;
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    overflow: hidden;
 }
 
 #playerWrap.fullscreen {
@@ -29,7 +30,7 @@
 }
 
 .controls {
-    position: absolute;
+    position: absolute !important;
     bottom: 0;
     left: 0;
     right: 0;
@@ -47,12 +48,16 @@
 
 }
 
+/* Show controls on hover in normal mode only */
+#playerWrap:not(.fullscreen):hover .controls {
+    opacity: 1;
+}
+
 .controls.fullscreen {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 1 !important;
 }
 
 .progress-container {
@@ -320,7 +325,6 @@ input[type=range].small {
     background: linear-gradient(90deg, var(--accent1), var(--accent2));
     border-radius: 2px;
     outline: none;
-    -webkit-appearance: none;
 }
 
 .setting-item input[type="range"]::-webkit-slider-thumb {
