@@ -431,9 +431,14 @@ input[type=range].small {
     right: 20px;
 }
 
-/* Show overlay buttons on hover */
-#playerWrap:hover .overlay-btn {
+/* Show overlay buttons on hover in normal mode only */
+#playerWrap:not(.fullscreen):hover .overlay-btn {
     opacity: 1;
+}
+
+/* Hide overlay buttons in fullscreen */
+#playerWrap.fullscreen .overlay-btn {
+    opacity: 0;
 }
 
 @media (max-width:768px) {
