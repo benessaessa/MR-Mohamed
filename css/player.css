@@ -382,7 +382,7 @@ input[type=range].small {
     top: 50%;
     transform: translateY(-50%);
     z-index: 15;
-    background: rgba(0, 0, 0, 0.2);
+    background: none;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     width: 60px;
@@ -393,7 +393,7 @@ input[type=range].small {
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     opacity: 0;
     pointer-events: auto;
 }
@@ -431,14 +431,9 @@ input[type=range].small {
     right: 20px;
 }
 
-/* Show overlay buttons on hover in normal mode only */
-#playerWrap:not(.fullscreen):hover .overlay-btn {
+/* Show overlay buttons on hover */
+#playerWrap:hover .overlay-btn {
     opacity: 1;
-}
-
-/* Hide overlay buttons in fullscreen */
-#playerWrap.fullscreen .overlay-btn {
-    opacity: 0;
 }
 
 @media (max-width:768px) {

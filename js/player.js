@@ -407,11 +407,6 @@ function handleFullscreenChange() {
     controls.style.left = '';
     controls.style.right = '';
     controls.style.bottom = '';
-    // Remove fullscreen overlay listeners
-    elem.removeEventListener('mouseenter', showOverlayButtons);
-    elem.removeEventListener('mouseleave', hideOverlayButtons);
-    controls.removeEventListener('mouseenter', hideOverlayButtons);
-    controls.removeEventListener('mouseleave', showOverlayButtons);
     // Hide controls in normal mode
     hideControls();
   } else {
@@ -419,13 +414,6 @@ function handleFullscreenChange() {
     showControls();
     clearTimeout(hideControlsTimeout);
     resetHideTimer();
-    // Hide overlay buttons initially in fullscreen
-    hideOverlayButtons();
-    // Add fullscreen overlay listeners
-    elem.addEventListener('mouseenter', showOverlayButtons);
-    elem.addEventListener('mouseleave', hideOverlayButtons);
-    controls.addEventListener('mouseenter', hideOverlayButtons);
-    controls.addEventListener('mouseleave', showOverlayButtons);
   }
 }
 
@@ -457,19 +445,4 @@ function resetHideTimer() {
   // Hide controls after delay in both modes
   const delay = (document.fullscreenElement || document.webkitFullscreenElement) ? 5000 : 2000;
   hideControlsTimeout = setTimeout(hideControls, delay);
-}
-
-// Functions for overlay buttons in fullscreen
-function showOverlayButtons() {
-  const overlayBtns = document.querySelectorAll('.overlay-btn');
-  overlayBtns.forEach(btn => {
-    btn.style.opacity = '1';
-  });
-}
-
-function hideOverlayButtons() {
-  const overlayBtns = document.querySelectorAll('.overlay-btn');
-  overlayBtns.forEach(btn => {
-    btn.style.opacity = '0';
-  });
 }
